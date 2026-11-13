@@ -1,0 +1,314 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="siteTitle">Wine Shop & Home Delivery | 24 Hour Express Service</title>
+    <meta id="metaDesc" name="description" content="24 Hour Express Wine & Liquor Home Delivery Service. All Brands Available. Fast & Discreet Delivery.">
+    <meta id="metaKeys" name="keywords" content="wine home delivery, liquor delivery, alcohol delivery near me, 24 hour liquor shop">
+    <meta id="metaGoogleVerify" name="google-site-verification" content="">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media SEO -->
+    <meta property="og:title" id="ogTitle" content="Wine Shop & Home Delivery | 24 Hour Express Service">
+    <meta property="og:description" id="ogDesc" content="24 Hour Express Wine & Liquor Home Delivery Service. All Brands Available. Fast & Discreet Delivery.">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Firebase SDKs for Real-time Cloud Firestore Database -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <!-- Google Rich Snippet Schema (LocalBusiness) -->
+    <script type="application/ld+json" id="seoSchemaScript">
+    {
+      "@context": "https://schema.org",
+      "@type": "LiquorStore",
+      "name": "Wine Shop & Home Delivery",
+      "description": "24 Hour Express Wine & Liquor Home Delivery Service. All Brands Available.",
+      "telephone": "+91 86075 18160",
+      "openingHours": "Mo-Su 00:00-23:59"
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary-color: #d4af37;
+            --bg-color: #0f1117;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: #f3f4f6;
+            transition: background-color 0.3s ease;
+        }
+
+        .font-serif-luxury {
+            font-family: 'Cinzel', serif;
+        }
+
+        .theme-text {
+            color: var(--primary-color) !important;
+        }
+
+        .theme-bg {
+            background-color: var(--primary-color) !important;
+        }
+
+        .theme-border {
+            border-color: var(--primary-color) !important;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, var(--primary-color) 65%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.65);
+        }
+
+        .glass-card {
+            background: rgba(22, 27, 38, 0.88);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f1117;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2f3d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-black">
+
+    <!-- Custom Toast Notification -->
+    <div id="toastBanner" class="fixed top-4 left-1/2 -translate-x-1/2 z-[100] hidden max-w-sm w-[92%] bg-gray-900 border border-emerald-500 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-xs font-semibold transition-all">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+        <span id="toastMessage">Action completed!</span>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 glass-card border-b border-white/10 px-3 sm:px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+            <button onclick="toggleSideMenu()" class="theme-text p-2 text-2xl focus:outline-none hover:opacity-80 transition-opacity shrink-0" title="Open Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="text-center overflow-hidden">
+                <a href="#" class="text-base sm:text-xl md:text-2xl font-bold font-serif-luxury gold-gradient-text tracking-wide uppercase block truncate" id="brandHeaderName">
+                    Wine Shop & Home Delivery
+                </a>
+                <div class="text-[10px] uppercase tracking-widest text-emerald-400 font-semibold flex items-center justify-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0"></span> 
+                    <span id="headerSubBadgeDisplay" class="truncate">24 Hour Express Delivery</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+                <a href="tel:+918607518160" id="headerCallBtn" class="theme-bg text-black p-2.5 rounded-full font-bold transition-all shadow-md flex items-center justify-center">
+                    <i id="headerCallIcon" class="fa-solid fa-phone text-sm"></i>
+                </a>
+                <button onclick="openAdminModal()" id="cartHeaderBtn" class="relative bg-gray-800 border border-white/20 p-2.5 rounded-full theme-text hover:opacity-80 transition-opacity" title="Admin Login">
+                    <i class="fa-solid fa-user-gear text-base sm:text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Navigation Menu Drawer -->
+    <div id="sideMenuOverlay" onclick="toggleSideMenu()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="sideMenuDrawer" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-gray-900 border-r border-white/15 z-50 -translate-x-full transition-transform duration-300 p-6 flex flex-col justify-between overflow-y-auto">
+        <div>
+            <div class="flex items-center justify-between pb-4 border-b border-gray-800">
+                <span class="font-serif-luxury font-bold text-lg theme-text">Navigation</span>
+                <button onclick="toggleSideMenu()" class="text-gray-400 hover:text-white text-xl p-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <nav class="mt-6 space-y-2.5">
+                <a href="#hero" onclick="toggleSideMenu()" class="block p-3 rounded-xl bg-gray-800/50 hover:bg-white/10 text-gray-200 transition-all font-semibold flex items-center gap-3 text-sm">
+                    <i class="fa-solid fa-house theme-text"></i> Home
+                </a>
+                <a href="#products" onclick="toggleSideMenu()" class="block p-3 rounded-xl bg-gray-800/50 hover:bg-white/10 text-gray-200 transition-all font-semibold flex items-center gap-3 text-sm">
+                    <i class="fa-solid fa-wine-bottle theme-text"></i> Catalog (All Brands)
+                </a>
+                <a href="#contactSection" id="sideSupportLink" onclick="toggleSideMenu()" class="block p-3 rounded-xl bg-gray-800/50 hover:bg-white/10 text-gray-200 transition-all font-semibold flex items-center gap-3 text-sm">
+                    <i class="fa-solid fa-headset theme-text"></i> Contact Support
+                </a>
+                <button onclick="toggleSideMenu(); openTermsModal();" class="w-full text-left p-3 rounded-xl bg-gray-800/50 hover:bg-white/10 text-gray-200 transition-all font-semibold flex items-center gap-3 text-sm">
+                    <i class="fa-solid fa-file-contract theme-text"></i> Terms & Conditions
+                </button>
+                <button onclick="toggleSideMenu(); openAdminModal();" class="w-full text-left p-3 rounded-xl bg-white/10 hover:bg-white/15 theme-text font-semibold flex items-center gap-3 transition-all border border-white/15 text-sm">
+                    <i class="fa-solid fa-user-gear"></i> Admin Panel Login
+                </button>
+            </nav>
+        </div>
+
+        <div class="pt-6 border-t border-gray-800 text-center text-xs text-gray-400 space-y-2">
+            <p class="text-emerald-400 font-semibold"><i class="fa-solid fa-clock"></i> Open 24 Hours / 365 Days</p>
+            <p>100% Genuine Brands Guaranteed</p>
+            <p class="text-[11px] text-gray-400">Direct Support: <a id="sideMenuPhoneLink" href="tel:+918607518160" class="theme-text font-semibold"><span id="sideMenuPhone">+91 86075 18160</span></a></p>
+            <p class="text-[10px] text-gray-500 break-all">Email: <a id="sideMenuEmailLink" href="mailto:Surajmeena.86075@gmail.com" class="hover:text-white"><span id="sideMenuEmail">Surajmeena.86075@gmail.com</span></a></p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative py-10 md:py-14 px-4 max-w-7xl mx-auto overflow-hidden">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 bg-white/5 border border-white/15 theme-text px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-certificate"></i> <span id="heroBadgeDisplay">Premium Licensed Retailer</span>
+                </div>
+                <h1 id="heroTitleDisplay" class="text-3xl md:text-5xl lg:text-6xl font-extrabold font-serif-luxury leading-tight text-white">
+                    24 Hour Express <span class="gold-gradient-text">Wine & Liquor</span> Home Delivery
+                </h1>
+                <p id="heroDescDisplay" class="text-gray-300 text-sm md:text-base leading-relaxed max-w-xl mx-auto md:mx-0">
+                    Order top brands right to your doorstep. Best service guaranteed across all local areas with fast and private home delivery.
+                </p>
+
+                <div class="grid grid-cols-3 gap-2 py-3 text-center border-y border-gray-800">
+                    <div class="p-2">
+                        <i class="fa-solid fa-clock theme-text text-xl mb-1"></i>
+                        <h4 class="text-xs font-bold text-gray-200">24/7 Hours</h4>
+                        <p class="text-[10px] text-gray-400">Non-Stop Delivery</p>
+                    </div>
+                    <div class="p-2 border-x border-gray-800">
+                        <i class="fa-solid fa-award theme-text text-xl mb-1"></i>
+                        <h4 class="text-xs font-bold text-gray-200">Best Service</h4>
+                        <p class="text-[10px] text-gray-400">100% Satisfaction</p>
+                    </div>
+                    <div class="p-2">
+                        <i class="fa-solid fa-wine-bottle theme-text text-xl mb-1"></i>
+                        <h4 class="text-xs font-bold text-gray-200">All Brands</h4>
+                        <p class="text-[10px] text-gray-400">Whisky, Wine, Beer</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 sm:gap-4">
+                    <a id="heroWaActionBtn" href="https://wa.me/918607518160?text=Hi,%20I%20want%20to%20order%20wine/liquor" target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-3 text-sm md:text-base">
+                        <i id="heroWaIcon" class="fa-brands fa-whatsapp text-xl"></i> Order via WhatsApp
+                    </a>
+                    <a id="heroCallActionBtn" href="tel:+918607518160" class="w-full sm:w-auto theme-bg hover:opacity-90 text-black font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-3 text-sm md:text-base">
+                        <i id="heroCallIcon" class="fa-solid fa-phone text-base"></i> <span id="heroCallBtnText">Call Now (+91 86075 18160)</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center">
+                <div class="glass-card p-3 rounded-3xl overflow-hidden max-w-md w-full shadow-2xl relative border border-white/15">
+                    <img id="heroImageDisplay" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Liquor Selection" class="w-full h-72 sm:h-80 object-cover rounded-2xl">
+                    <div class="absolute bottom-6 left-6 right-6 bg-black/80 backdrop-blur-md p-3 rounded-xl border border-white/15 text-center">
+                        <span class="theme-text font-bold text-xs uppercase tracking-wider block">Express Delivery Service</span>
+                        <span class="text-gray-300 text-[11px]">Discreet & Direct Delivery to Your Door</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <section id="products" class="py-12 px-4 max-w-7xl mx-auto border-t border-gray-800">
+        <div class="text-center space-y-2 mb-8">
+            <h2 class="text-2xl md:text-4xl font-bold font-serif-luxury text-white">Available <span class="gold-gradient-text">Brands & Catalog</span></h2>
+            <p class="text-gray-400 text-xs md:text-sm">Swipe or click image arrows to view multiple product photos</p>
+
+            <div class="flex flex-wrap justify-center gap-2 pt-4">
+                <button onclick="filterCategory('All')" class="cat-btn theme-bg text-black px-4 py-2 rounded-full text-xs font-bold transition-all">All</button>
+                <button onclick="filterCategory('Whisky')" class="cat-btn bg-gray-800 hover:bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-xs font-bold transition-all">Whisky</button>
+                <button onclick="filterCategory('Wine')" class="cat-btn bg-gray-800 hover:bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-xs font-bold transition-all">Wine</button>
+                <button onclick="filterCategory('Beer')" class="cat-btn bg-gray-800 hover:bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-xs font-bold transition-all">Beer</button>
+                <button onclick="filterCategory('Vodka/Rum')" class="cat-btn bg-gray-800 hover:bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-xs font-bold transition-all">Vodka / Rum</button>
+            </div>
+        </div>
+
+        <div id="productGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            <!-- Products rendered dynamically -->
+        </div>
+    </section>
+
+    <!-- Contact Delivery Support Section -->
+    <section id="contactSection" class="py-12 px-4 max-w-7xl mx-auto border-t border-gray-800">
+        <div class="glass-card rounded-3xl p-6 md:p-10 border border-white/15 text-center space-y-6">
+            <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                <i class="fa-solid fa-headset"></i> Delivery Support Active
+            </div>
+            <h2 id="contactTitleDisplay" class="text-2xl md:text-3xl font-bold font-serif-luxury text-white">Need Quick Order Assistance?</h2>
+            <p id="contactDescDisplay" class="text-gray-300 text-xs md:text-sm max-w-2xl mx-auto">
+                Call our express support helpline, send a message on WhatsApp, or email us for custom orders, fast home delivery, and special inquiries.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 flex-wrap">
+                <a id="contactCallBtn" href="tel:+918607518160" class="w-full sm:w-auto theme-bg hover:opacity-90 text-black font-bold px-6 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-xs md:text-sm">
+                    <i class="fa-solid fa-phone"></i> <span id="contactCallBtnText">Call: +91 86075 18160</span>
+                </a>
+                <a id="contactWaBtn" href="https://wa.me/918607518160" target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-xs md:text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Direct WhatsApp Order
+                </a>
+                <a id="contactEmailBtn" href="mailto:Surajmeena.86075@gmail.com" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 theme-text border border-white/15 font-bold px-6 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-xs md:text-sm break-all">
+                    <i class="fa-solid fa-envelope"></i> <span id="contactEmailBtnText">Surajmeena.86075@gmail.com</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Action Switch -->
+    <a id="floatingWaBtn" href="https://wa.me/918607518160?text=Hi,%20I%20want%20to%20order%20wine/liquor" target="_blank" class="fixed bottom-5 right-5 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl z-40 transition-transform hover:scale-110 btn-glow">
+        <i id="floatingWaIcon" class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Age Verification Modal -->
+    <div id="ageModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full rounded-3xl p-6 sm:p-8 text-center space-y-6 border border-white/25 shadow-2xl relative">
+            <div class="w-20 h-20 bg-white/5 border-2 theme-border theme-text rounded-full flex items-center justify-center mx-auto text-3xl font-serif-luxury font-bold">
+                18+
+            </div>
+            <div>
+                <h2 class="text-2xl font-serif-luxury font-bold text-white">Age Verification Required</h2>
+                <p class="text-gray-300 text-xs mt-2 leading-relaxed">
+                    You must be 18 years of age or older to enter and order alcohol for home delivery. By entering, you agree to our Terms & Conditions.
+                </p>
+            </div>
+            <div id="ageUnderError" class="hidden text-red-400 text-xs bg-red-500/10 border border-red-500/30 p-2.5 rounded-xl font-semibold">
+                Access restricted! Only individuals aged 18 and older are allowed.
+            </div>
+            <div class="space-y-3 pt-1">
+                <button onclick="confirmAge(true)" class="w-full theme-bg hover:opacity-90 text-black font-bold py-3.5 rounded-xl transition-all btn-glow text-sm">
+                    YES, I AM 18+ (ENTER)
+                </button>
+                <button onclick="confirmAge(false)" class="w-full bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold py-3 rounded-xl transition-all text-xs">
+                    I am under 18 (Exit)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms & Conditions Modal -->
+    <div id="termsModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-2xl w-full max-h-[85vh] flex flex-col rounded-2xl p-6 border border-white/20 relative text-left">
+           
