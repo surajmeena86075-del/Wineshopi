@@ -1,1025 +1,2311 @@
+```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title id="meta-title">Vintner's Reserve | Rare Wines & Estates</title>
-<meta id="meta-desc" name="description" content="Discover rare vintage wines, artisanal spirits, and exclusive cellar selections at Vintner's Reserve.">
-<meta id="meta-keywords" name="keywords" content="wine shop, rare wine, vintage reserve, champagne, cellar selection">
-<link id="dynamic-favicon" rel="icon" type="image/png" href="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=64&q=80">
-​<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-​<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-​<script>
-tailwind.config = {
-theme: {
-extend: {
-colors: {
-burgundy: {
-DEFAULT: '#4a0e17',
-dark: '#2d080e',
-light: '#6c1523',
-accent: '#801a2b'
-},
-gold: {
-DEFAULT: '#d4af37',
-light: '#f3e5ab',
-dark: '#aa8c2c',
-metallic: '#c5a059'
-}
-},
-fontFamily: {
-cinzel: ['Cinzel', 'serif'],
-sans: ['Plus Jakarta Sans', 'sans-serif']
-}
-}
-}
-}
-</script>
-​<style>
-body {
-font-family: 'Plus Jakarta Sans', sans-serif;
-background-color: #0b0708;
-color: #f3f0ec;
-overflow-x: hidden;
--webkit-tap-highlight-color: transparent;
-}
-h1, h2, h3, h4, .font-cinzel {
-font-family: 'Cinzel', serif;
-}
-.gold-gradient {
-background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa8c2c 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-.luxury-card {
-background: linear-gradient(145deg, rgba(45, 8, 14, 0.8) 0%, rgba(11, 7, 8, 0.95) 100%);
-border: 1px solid rgba(212, 175, 55, 0.25);
-backdrop-filter: blur(12px);
-transition: all 0.3s ease;
-}
-.luxury-card:hover {
-border-color: rgba(212, 175, 55, 0.5);
-}
-.btn-gold {
-background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa8c2c 100%);
-color: #0b0708;
-font-weight: 700;
-transition: all 0.3s ease;
-box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-}
-.btn-gold:active {
-transform: scale(0.97);
-}
-.btn-outline-gold {
-border: 1px solid #d4af37;
-color: #d4af37;
-font-weight: 600;
-transition: all 0.3s ease;
-}
-.btn-outline-gold:active {
-background-color: rgba(212, 175, 55, 0.2);
-}
-.admin-input {
-background: rgba(20, 12, 15, 0.95);
-border: 1px solid rgba(212, 175, 55, 0.3);
-color: #fff;
-border-radius: 0.75rem;
-padding: 0.875rem 1rem;
-width: 100%;
-font-size: 16px; /* Prevents iOS auto-zoom on input focus */
-outline: none;
-transition: border-color 0.2s;
-}
-.admin-input:focus {
-border-color: #d4af37;
-box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
-}
-::-webkit-scrollbar {
-width: 6px;
-height: 6px;
-}
-::-webkit-scrollbar-track {
-background: #0b0708;
-}
-::-webkit-scrollbar-thumb {
-background: #4a0e17;
-border: 1px solid #d4af37;
-border-radius: 3px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title id="meta-title">VINTORA — Premium Wine & Spirits | Open 24 Hours</title>
+  <meta id="meta-description" name="description" content="VINTORA Premium Wine & Spirits. Curated international fine wines, rare single malts, champagne, and all major liquor brands. Open 24 Hours." />
+  <meta id="meta-keywords" name="keywords" content="VINTORA, luxury wine shop, premium spirits, single malt whisky, champagne, fine wine boutique, 24 hour wine shop, imported liquor" />
+  <meta id="meta-robots" name="robots" content="index, follow, max-image-preview:large" />
+  <meta id="meta-google-verification" name="google-site-verification" content="" />
+  <link id="meta-canonical" rel="canonical" href="" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta id="og-title" property="og:title" content="VINTORA — Premium Wine & Spirits" />
+  <meta id="og-description" property="og:description" content="Curated international fine wines, rare single malts, and luxury spirits. Open 24 Hours." />
+  <meta id="og-image" property="og:image" content="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1400&q=85" />
+  <meta property="og:type" content="website" />
+
+  <!-- Dynamic Favicon -->
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232B0912'/><text x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23D4AF37' text-anchor='middle'>V</text></svg>" />
+
+  <!-- Luxury Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD Structured Data for Google Rich Results -->
+  <script id="ld-json-schema" type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LiquorStore",
+    "name": "VINTORA — Premium Wine & Spirits",
+    "description": "Curated international fine wines, rare single malts, champagne, and all premium brands. Open 24 Hours.",
+    "telephone": "+918607518160",
+    "email": "Surajmeena.86075@gmail.com",
+    "openingHours": "Mo-Su 00:00-23:59",
+    "priceRange": "$$$"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-primary: #0B090A;
+      --bg-surface: #141012;
+      --bg-card: #1A1417;
+      --accent-burgundy: #4A0E1C;
+      --accent-gold: #D4AF37;
+      --accent-gold-soft: rgba(212, 175, 55, 0.16);
+      --text-primary: #F8F5F0;
+      --text-muted: #B8AFA6;
+      --border-subtle: rgba(212, 175, 55, 0.22);
+      --header-bg: rgba(11, 9, 10, 0.92);
+      --footer-bg: #070506;
+      --btn-bg: #D4AF37;
+      --btn-text: #0B090A;
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-editorial: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-card: 4px;
+      --section-pad: 96px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0B090A; }
+    ::-webkit-scrollbar-thumb { background: #4A0E1C; border-radius: 3px; }
+
+    /* Typography Helpers */
+    .font-display { font-family: var(--font-display); letter-spacing: 0.14em; }
+    .font-editorial { font-family: var(--font-editorial); }
+    .gold-text { color: var(--accent-gold); }
+    .muted-text { color: var(--text-muted); }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Luxury Header */
+    header.site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      background: var(--header-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.35s ease;
+    }
+    header.site-header.not-sticky { position: relative; }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 82px;
+      gap: 16px;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand-logo-img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+    .brand-wordmark {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      color: var(--text-primary);
+      line-height: 1.1;
+    }
+    .brand-sub {
+      font-size: 0.62rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-primary);
+      transition: color 0.25s;
+      position: relative;
+    }
+    .nav-links a:hover { color: var(--accent-gold); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge-24h {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(74, 14, 28, 0.45);
+      border-radius: 999px;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+    }
+    .pulse-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #22C55E;
+      box-shadow: 0 0 8px #22C55E;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      color: var(--text-primary);
+      padding: 8px;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 950;
+      background: rgba(8, 6, 7, 0.98);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 26px;
+      padding: 32px;
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      letter-spacing: 0.2em;
+      color: var(--text-primary);
+    }
+    .mobile-drawer a:hover { color: var(--accent-gold); }
+
+    /* Buttons */
+    .btn-luxury {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 32px;
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-radius: var(--radius-card);
+      transition: all 0.3s ease;
+      border: 1px solid var(--btn-bg);
+    }
+    .btn-luxury:hover {
+      background: transparent;
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 32px;
+      background: rgba(11, 9, 10, 0.55);
+      color: var(--text-primary);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+    .btn-outline:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 130px 0 90px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.42) contrast(1.08);
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 45%, rgba(74, 14, 28, 0.38), rgba(11, 9, 10, 0.88) 78%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--accent-gold);
+    }
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.3rem, 5.5vw, 4.4rem);
+      font-weight: 500;
+      line-height: 1.14;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+      color: var(--text-primary);
+    }
+    .hero-subheadline {
+      font-family: var(--font-editorial);
+      font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+      color: #E2DBD2;
+      max-width: 650px;
+      margin-bottom: 38px;
+      line-height: 1.55;
+    }
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* All Brands Marquee Ribbon */
+    .brands-ribbon {
+      background: linear-gradient(90deg, #12090C, #2A0A13, #12090C);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 20px 0;
+      overflow: hidden;
+    }
+    .brands-track {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 28px 42px;
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      letter-spacing: 0.24em;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+    }
+
+    /* Section Styling */
+    .section-block {
+      padding: var(--section-pad) 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.09);
+    }
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 60px;
+    }
+    .section-kicker {
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.4vw, 2.7rem);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-family: var(--font-editorial);
+      font-size: 1.25rem;
+      color: var(--text-muted);
+    }
+
+    /* Editorial About Grid */
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .editorial-img-wrap {
+      position: relative;
+      border: 1px solid var(--border-subtle);
+      padding: 12px;
+      background: var(--bg-surface);
+    }
+    .editorial-img-wrap img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .editorial-copy h3 {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+    .editorial-copy p {
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      font-size: 1.02rem;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .pillar-item strong {
+      display: block;
+      font-family: var(--font-display);
+      color: var(--accent-gold);
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+    .pillar-item span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* Collection & Product Showcase */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      transition: transform 0.35s ease, border-color 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-gold);
+    }
+    .product-img-box {
+      position: relative;
+      height: 320px;
+      background: #0F0B0D;
+      overflow: hidden;
+    }
+    .product-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .product-card:hover .product-img-box img { transform: scale(1.06); }
+    .product-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(11, 9, 10, 0.86);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      font-size: 0.66rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+    }
+    .product-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-origin {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 6px;
+    }
+    .product-title {
+      font-family: var(--font-display);
+      font-size: 1.18rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+    }
+    .product-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid rgba(212, 175, 55, 0.14);
+      font-size: 0.8rem;
+      color: var(--text-primary);
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      position: relative;
+      height: 340px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-caption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 18px;
+      background: linear-gradient(transparent, rgba(8, 6, 7, 0.92));
+      font-family: var(--font-editorial);
+      font-size: 1.15rem;
+      color: var(--text-primary);
+    }
+
+    /* Why Choose Us */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 34px 28px;
+      border-radius: var(--radius-card);
+    }
+    .feature-num {
+      font-family: var(--font-display);
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .feature-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.12rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+    }
+    .feature-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* Shop Info & Map */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+    .info-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .info-row {
+      border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+      padding-bottom: 16px;
+    }
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .info-value {
+      font-size: 1.05rem;
+      color: var(--text-primary);
+    }
+    .map-frame {
+      width: 100%;
+      min-height: 400px;
+      border: 1px solid var(--border-subtle);
+      filter: grayscale(0.25) contrast(1.05);
+    }
+
+    /* Footer */
+    footer.site-footer {
+      background: var(--footer-bg);
+      border-top: 1px solid var(--border-subtle);
+      padding: 76px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+      gap: 40px;
+      margin-bottom: 54px;
+    }
+    .footer-col h5 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      color: var(--accent-gold);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .footer-links a:hover, .footer-links button:hover {
+      color: var(--accent-gold);
+      text-align: left;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(212, 175, 55, 0.12);
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .stealth-portal-link {
+      color: rgba(184, 175, 166, 0.35);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      transition: color 0.3s;
+    }
+    .stealth-portal-link:hover { color: var(--accent-gold); }
+
+    /* Floating Concierge Buttons */
+    .floating-concierge {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 880;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .floating-concierge.left { right: auto; left: 24px; }
+    .float-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+      transition: transform 0.25s ease;
+    }
+    .float-btn:hover { transform: scale(1.08); }
+    .float-whatsapp { background: #1E9E52; color: #FFFFFF; }
+    .float-call { background: var(--accent-gold); color: #0B090A; }
+
+    /* Legal Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      background: rgba(5, 4, 5, 0.88);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-card {
+      background: #141012;
+      border: 1px solid var(--accent-gold);
+      max-width: 680px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 36px;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    /* =========================================================
+       STEALTH MOBILE-FIRST ADMIN PANEL (COMPLETELY HIDDEN UNTIL AUTH)
+       ========================================================= */
+    #admin-auth-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(6, 4, 5, 0.94);
+      backdrop-filter: blur(12px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #admin-auth-modal.open { display: flex; }
+
+    #admin-dashboard-shell {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2500;
+      background: #090809;
+      color: #F8F5F0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    #admin-dashboard-shell.active { display: block; }
+
+    .admin-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #120E10;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .admin-tabs-bar {
+      display: flex;
+      overflow-x: auto;
+      gap: 8px;
+      padding: 12px 16px;
+      background: #0E0B0C;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      scrollbar-width: none;
+    }
+    .admin-tabs-bar::-webkit-scrollbar { display: none; }
+    .admin-tab-btn {
+      white-space: nowrap;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: #191416;
+      color: #B8AFA6;
+      border: 1px solid rgba(212, 175, 55, 0.16);
+      transition: all 0.2s;
+    }
+    .admin-tab-btn.active {
+      background: #D4AF37;
+      color: #0B090A;
+      font-weight: 600;
+      border-color: #D4AF37;
+    }
+
+    .admin-workspace {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px 16px 110px;
+    }
+    .admin-panel-view { display: none; }
+    .admin-panel-view.active { display: block; }
+
+    .admin-card {
+      background: #141012;
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+    .admin-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: #D4AF37;
+      margin-bottom: 14px;
+      letter-spacing: 0.08em;
+    }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      color: #D6CEC4;
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+    .admin-input, .admin-textarea, .admin-select {
+      width: 100%;
+      padding: 13px 14px;
+      background: #0B090A;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      border-radius: 8px;
+      color: #F8F5F0;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+    .admin-input:focus, .admin-textarea:focus, .admin-select:focus {
+      outline: none;
+      border-color: #D4AF37;
+    }
+    .admin-textarea { min-height: 92px; resize: vertical; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .switch-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .switch-row:last-child { border-bottom: none; }
+
+    .upload-box {
+      border: 1px dashed rgba(212, 175, 55, 0.5);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      background: rgba(212, 175, 55, 0.04);
+      margin-top: 8px;
+    }
+    .preview-thumb {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-top: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .admin-save-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 60;
+      background: #120E10;
+      border-top: 1px solid rgba(212, 175, 55, 0.35);
+      padding: 12px 16px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+    .btn-save-master {
+      flex: 1;
+      max-width: 480px;
+      padding: 15px 24px;
+      background: #D4AF37;
+      color: #0B090A;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 8px;
+    }
+
+    /* Toast Notification */
+    #toast-banner {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-120px);
+      z-index: 3000;
+      background: #181315;
+      border: 1px solid #D4AF37;
+      color: #F8F5F0;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+      transition: transform 0.35s ease;
+      max-width: 92vw;
+      text-align: center;
+    }
+    #toast-banner.show { transform: translateX(-50%) translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .nav-links, .badge-24h.desktop-only { display: none; }
+      .mobile-menu-btn { display: inline-flex; }
+      .editorial-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+      .editorial-img-wrap img { height: 340px; }
+    }
+    @media (max-width: 600px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .hero-cta-group .btn-luxury, .hero-cta-group .btn-outline { width: 100%; }
+      .info-panel { padding: 24px; }
+    }
+  </style>
 </head>
-<body class="bg-[#0b0708] text-[#f3f0ec] antialiased selection:bg-amber-500 selection:text-black">
-​<!-- FLOATING ACTION BUTTONS (WhatsApp & Phone) -->
-<div class="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
-<a id="float-call-btn" href="tel:8607518160" class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-burgundy border-2 border-amber-500 text-amber-400 flex items-center justify-center shadow-2xl active:scale-95 transition-transform cursor-pointer" title="Call Boutique">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-</a>
-<a id="float-wa-btn" href="https://wa.me/918607518160" target="_blank" rel="noopener noreferrer" class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-emerald-600 border-2 border-emerald-400 text-white flex items-center justify-center shadow-2xl active:scale-95 transition-transform cursor-pointer" title="WhatsApp Chat">
-<svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-</a>
-</div>
-​<!-- HEADER NAVIGATION -->
-<header id="site-header" class="sticky top-0 z-30 bg-[#0b0708]/95 backdrop-blur-md border-b border-amber-500/20 transition-all">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<img id="nav-logo-img" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=120&q=80" alt="Logo" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover border border-amber-500/50 shadow-lg">
-<div>
-<span id="nav-brand-name" class="text-lg sm:text-2xl font-bold font-cinzel gold-gradient tracking-wider">Vintner's Reserve</span>
-<p id="nav-brand-tagline" class="text-[10px] uppercase tracking-widest text-amber-300/70 hidden sm:block">Rare Cellar & Estates</p>
-</div>
-</div>
-<nav class="hidden md:flex items-center gap-8 font-cinzel text-sm uppercase tracking-widest text-stone-300">
-<a href="#about" class="hover:text-amber-400 transition-colors">About Us</a>
-<a href="#catalog" class="hover:text-amber-400 transition-colors">Wine Catalog</a>
-<a href="#services" class="hover:text-amber-400 transition-colors">Services</a>
-<a href="#gallery" class="hover:text-amber-400 transition-colors">Gallery</a>
-<a href="#contact" class="hover:text-amber-400 transition-colors">Contact</a>
-</nav>
-<div class="flex items-center gap-3">
-<a id="nav-phone-link" href="tel:8607518160" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg btn-outline-gold text-xs uppercase tracking-wider font-cinzel">
-<svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-<span id="nav-phone-text">860-751-8160</span>
-</a>
-</div>
-</div>
-</header>
-​<!-- HERO BANNER -->
-<section id="hero-section" class="relative min-h-[80vh] flex items-center justify-center bg-cover bg-center px-4 py-16" style="background-image: linear-gradient(to bottom, rgba(11,7,8,0.7), rgba(11,7,8,0.95)), url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1920&q=80');">
-<div class="max-w-4xl mx-auto text-center space-y-6 z-10">
-<span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[11px] uppercase tracking-[0.2em] font-cinzel">
-Exclusive Estates & Grand Vintages
-</span>
-<h1 id="hero-heading" class="text-3xl sm:text-6xl lg:text-7xl font-bold font-cinzel tracking-tight text-white leading-tight">
-The Pinnacle of <span class="gold-gradient">Fine Wines</span>
-</h1>
-<p id="hero-desc" class="text-base sm:text-xl text-stone-300 max-w-2xl mx-auto font-light leading-relaxed px-2">
-Curated selections from legendary vineyards across Bordeaux, Tuscany, Napa, and Champagne. Experience true oenological excellence.
-</p>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 px-4">
-<a id="hero-btn-1" href="#catalog" class="btn-gold w-full sm:w-auto px-8 py-4 rounded-xl text-xs uppercase tracking-widest font-cinzel text-center">
-Explore Catalog
-</a>
-<a id="hero-btn-2" href="#contact" class="btn-outline-gold w-full sm:w-auto px-8 py-4 rounded-xl text-xs uppercase tracking-widest font-cinzel text-center">
-Inquire with Sommelier
-</a>
-</div>
-</div>
-</section>
-​<!-- WELCOME / ABOUT US -->
-<section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-<div class="space-y-6">
-<span class="text-xs uppercase tracking-[0.3em] text-amber-400 font-cinzel">Heritage & Expertise</span>
-<h2 id="about-heading" class="text-2xl sm:text-4xl font-bold font-cinzel leading-snug">
-A Legacy of Connoisseurship and Exceptional Cellars
-</h2>
-<p id="about-text" class="text-stone-300 leading-relaxed font-light text-sm sm:text-base">
-Founded on a profound passion for terroir and time-honored winemaking, Vintner's Reserve is a sanctuary for discerning collectors and enthusiasts. Every bottle in our reserve is meticulously sourced, temperature-guaranteed, and preserved in optimal subterranean conditions.
-</p>
-<div class="grid grid-cols-2 gap-6 pt-4 border-t border-amber-500/20">
-<div>
-<h4 class="text-3xl font-bold font-cinzel gold-gradient">100+</h4>
-<p class="text-[11px] uppercase text-stone-400 tracking-wider mt-1">Grand Cru Estates</p>
-</div>
-<div>
-<h4 class="text-3xl font-bold font-cinzel gold-gradient">100%</h4>
-<p class="text-[11px] uppercase text-stone-400 tracking-wider mt-1">Provenance Guaranteed</p>
-</div>
-</div>
-</div>
-<div class="relative">
-<div class="absolute -inset-2 bg-gradient-to-r from-amber-500 to-burgundy rounded-2xl blur-lg opacity-30"></div>
-<img id="about-img" src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&q=80" alt="Wine Cellar" class="relative rounded-2xl object-cover w-full h-[320px] sm:h-[400px] border border-amber-500/30">
-</div>
-</div>
-</section>
-​<!-- SHOP INFORMATION -->
-<section class="py-14 bg-burgundy-dark/40 border-y border-amber-500/20">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="luxury-card p-6 sm:p-8 rounded-2xl text-center space-y-3">
-<div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-</div>
-<h3 class="font-cinzel text-lg sm:text-xl font-bold">Boutique Location</h3>
-<p id="info-address" class="text-xs sm:text-sm text-stone-300">Grand Heritage Arcade, Connaught Place, New Delhi, India</p>
-</div>
-<div class="luxury-card p-6 sm:p-8 rounded-2xl text-center space-y-3">
-<div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-</div>
-<h3 class="font-cinzel text-lg sm:text-xl font-bold">Private Cellar Hours</h3>
-<p id="info-hours" class="text-xs sm:text-sm text-stone-300">Monday — Saturday: 11:00 AM – 10:00 PM
-Sunday: By Private Appointment</p>
-</div>
-<div class="luxury-card p-6 sm:p-8 rounded-2xl text-center space-y-3">
-<div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-</div>
-<h3 class="font-cinzel text-lg sm:text-xl font-bold">Concierge Direct</h3>
-<p id="info-phone" class="text-xs sm:text-sm text-stone-300">Phone: +91 86075 18160
-Email: concierge@vintnersreserve.in</p>
-</div>
-</div>
-</div>
-</section>
-​<!-- PRODUCT GALLERY / CATALOG -->
-<section id="catalog" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-10">
-<div class="text-center space-y-3 max-w-3xl mx-auto">
-<span class="text-xs uppercase tracking-[0.3em] text-amber-400 font-cinzel">Curated Cellar Catalog</span>
-<h2 class="text-2xl sm:text-5xl font-bold font-cinzel gold-gradient">Exceptional Wine Collection</h2>
-<p class="text-stone-300 font-light text-sm sm:text-base">Explore our rarest vintages and grand reserve bottles. Inquire with our sommelier for availability and private allocations.</p>
-​<!-- Category Filter Tabs -->
-<div id="catalog-filters" class="flex flex-wrap items-center justify-center gap-2 pt-4">
-<button onclick="filterCatalog('all')" class="catalog-filter-btn px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-cinzel btn-gold cursor-pointer">All</button>
-<button onclick="filterCatalog('Red Wine')" class="catalog-filter-btn px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-cinzel btn-outline-gold cursor-pointer">Red</button>
-<button onclick="filterCatalog('White Wine')" class="catalog-filter-btn px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-cinzel btn-outline-gold cursor-pointer">White</button>
-<button onclick="filterCatalog('Sparkling & Champagne')" class="catalog-filter-btn px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-cinzel btn-outline-gold cursor-pointer">Champagne</button>
-<button onclick="filterCatalog('Rosé & Reserve')" class="catalog-filter-btn px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-cinzel btn-outline-gold cursor-pointer">Reserve</button>
-</div>
-</div>
-​<!-- Dynamic Products Grid -->
-<div id="public-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Injected via JavaScript -->
-</div>
-</section>
-​<!-- OUR SERVICES -->
-<section id="services" class="py-20 bg-burgundy-dark/20 border-t border-amber-500/20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-<div class="text-center space-y-3 max-w-3xl mx-auto mb-12">
-<span class="text-xs uppercase tracking-[0.3em] text-amber-400 font-cinzel">Boutique Privileges</span>
-<h2 class="text-2xl sm:text-4xl font-bold font-cinzel">Our Bespoke Services</h2>
-<p class="text-stone-300 font-light text-sm sm:text-base">Tailored oenological services designed for serious collectors, connoisseurs, and private events.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="luxury-card p-6 sm:p-8 rounded-2xl space-y-3">
-<div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-cinzel font-bold text-lg">01</div>
-<h3 class="font-cinzel text-lg sm:text-xl font-bold">Private Sommelier Consultations</h3>
-<p class="text-xs sm:text-sm text-stone-300 font-light">Schedule a one-on-one private consultation with our master sommelier to curate or expand your personal cellar.</p>
-</div>
-<div class="luxury-card p-6 sm:p-8 rounded-2xl space-y-3">
-<div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-cinzel font-bold text-lg">02</div>
-<h3 class="font-cinzel text-lg sm:text-xl font-bold">Cellar Valuation & Acquisition</h3>
-<p class="text-xs sm:text-sm text-stone-300 font-light">Expert provenance verification, cellar inventory management, and exclusive auction acquisition assistance.</p>
-</div>
-<div class="luxury-card p-6 sm:p-8 rounded-2xl space-y-3">
-<div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-cinzel font-bold text-lg">03</div>
-<h3 class="font-cinzel text-lg sm:text-xl font-bold">Private Tasting Masterclasses</h3>
-<p class="text-xs sm:text-sm text-stone-300 font-light">Exclusive guided tastings featuring rare vertical flights and estate-direct allocations for private gatherings.</p>
-</div>
-</div>
-</section>
-​<!-- PHOTO GALLERY -->
-<section id="gallery" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-10">
-<div class="text-center space-y-3 max-w-3xl mx-auto">
-<span class="text-xs uppercase tracking-[0.3em] text-amber-400 font-cinzel">Visual Aesthetics</span>
-<h2 class="text-2xl sm:text-4xl font-bold font-cinzel gold-gradient">Cellar Impressions</h2>
-<p class="text-stone-300 font-light text-sm sm:text-base">A glimpse into our subterranean tasting rooms, rare vintage vaults, and exquisite estate bottles.</p>
-</div>
-<div id="public-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-<!-- Injected via JavaScript -->
-</div>
-</section>
-​<!-- CONTACT US & MAP LOCATION -->
-<section id="contact" class="py-20 bg-burgundy-dark/40 border-t border-amber-500/20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-<div class="space-y-6">
-<span class="text-xs uppercase tracking-[0.3em] text-amber-400 font-cinzel">Get in Touch</span>
-<h2 class="text-2xl sm:text-4xl font-bold font-cinzel">Connect with Our Sommelier</h2>
-<p class="text-stone-300 font-light text-sm sm:text-base">Inquire about private reserve allocations, cellar visits, or booking a private masterclass.</p>
-​<div class="space-y-4 pt-2">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-</div>
-<div>
-<p class="text-[10px] uppercase text-stone-400 tracking-wider font-cinzel">Direct Phone & WhatsApp</p>
-<a id="contact-phone-disp" href="tel:8607518160" class="text-base sm:text-lg font-bold text-amber-300 hover:underline">+91 86075 18160</a>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-</div>
-<div>
-<p class="text-[10px] uppercase text-stone-400 tracking-wider font-cinzel">Email Concierge</p>
-<a id="contact-email-disp" href="mailto:concierge@vintnersreserve.in" class="text-base sm:text-lg font-bold text-amber-300 hover:underline">concierge@vintnersreserve.in</a>
-</div>
-</div>
-</div>
-</div>
-​<!-- Google Maps Frame -->
-<div class="luxury-card p-3 rounded-2xl h-[320px] sm:h-[400px]">
-<iframe id="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.138407425841!2d77.21672197653634!3d28.63043857566675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b4274c59%3A0xe54d6824907106a7!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; border-radius: 0.75rem;" allowfullscreen="" loading="lazy"></iframe>
-</div>
-</div>
-</section>
-​<!-- FOOTER -->
-<footer class="bg-black border-t border-amber-500/20 py-14 px-4 sm:px-6 lg:px-8">
-<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-<div class="space-y-3">
-<div class="flex items-center gap-3">
-<img id="footer-logo-img" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=120&q=80" alt="Logo" class="w-10 h-10 rounded-full object-cover border border-amber-500/50">
-<span id="footer-brand-name" class="text-lg font-bold font-cinzel gold-gradient">Vintner's Reserve</span>
-</div>
-<p class="text-xs text-stone-400 font-light leading-relaxed">
-Purveyors of rare vintage wines, grand cru allocations, and bespoke oenological advisory.
-</p>
-</div>
-<div>
-<h4 class="font-cinzel text-xs uppercase tracking-wider text-amber-400 mb-3">Quick Links</h4>
-<ul class="space-y-2 text-xs text-stone-300">
-<li><a href="#about" class="hover:text-amber-400 transition-colors">About Us</a></li>
-<li><a href="#catalog" class="hover:text-amber-400 transition-colors">Wine Catalog</a></li>
-<li><a href="#services" class="hover:text-amber-400 transition-colors">Services</a></li>
-<li><a href="#gallery" class="hover:text-amber-400 transition-colors">Photo Gallery</a></li>
-<li><a href="#contact" class="hover:text-amber-400 transition-colors">Contact</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-cinzel text-xs uppercase tracking-wider text-amber-400 mb-3">Legal & Compliance</h4>
-<ul class="space-y-2 text-xs text-stone-300">
-<li><a href="#terms" onclick="openLegalModal('terms')" class="hover:text-amber-400 transition-colors">Terms & Conditions</a></li>
-<li><a href="#privacy" onclick="openLegalModal('privacy')" class="hover:text-amber-400 transition-colors">Privacy Policy</a></li>
-<li><a href="#refund" onclick="openLegalModal('refund')" class="hover:text-amber-400 transition-colors">Refund Policy</a></li>
-<li><a href="#disclaimer" onclick="openLegalModal('disclaimer')" class="hover:text-amber-400 transition-colors">Legal Disclaimer</a></li>
-<li><a href="#responsible" onclick="openLegalModal('responsible')" class="hover:text-amber-400 transition-colors">Responsible Drinking</a></li>
-</ul>
-</div>
-<div class="space-y-3">
-<h4 class="font-cinzel text-xs uppercase tracking-wider text-amber-400">Responsible Enjoyment</h4>
-<p class="text-[11px] text-stone-400 leading-relaxed">
-Please enjoy responsibly. Do not drink and drive. Valid ID required for consultation and private acquisition.
-</p>
-<div class="pt-2 flex items-center justify-between text-xs text-stone-500">
-<span>© <span id="footer-year">2026</span> Vintner's Reserve.</span>
-<!-- Discreet Admin Link (Small dot) -->
-<button onclick="openAdminModal()" class="text-stone-700 hover:text-amber-400 transition-colors text-lg px-2 cursor-pointer" title="Staff Portal">•</button>
-</div>
-</div>
-</div>
-</footer>
-​<!-- LEGAL INFORMATION MODAL -->
-<div id="legal-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-md p-4">
-<div class="luxury-card max-w-2xl w-full p-6 sm:p-8 rounded-2xl max-h-[85vh] overflow-y-auto space-y-4 relative">
-<div class="flex items-center justify-between border-b border-amber-500/20 pb-3">
-<h3 id="legal-modal-title" class="text-xl sm:text-2xl font-bold font-cinzel gold-gradient">Legal Notice</h3>
-<button onclick="closeLegalModal()" class="text-stone-400 hover:text-amber-400 text-2xl font-bold cursor-pointer px-2">×</button>
-</div>
-<div id="legal-modal-body" class="text-xs sm:text-sm text-stone-300 space-y-3 font-light leading-relaxed">
-<!-- Injected via JavaScript -->
-</div>
-</div>
-</div>
-​<!-- MOBILE-FIRST ADMIN LOGIN & DASHBOARD MODAL -->
-<div id="admin-modal" class="fixed inset-0 z-50 hidden flex-col bg-black/95 backdrop-blur-md overflow-hidden">
-​<!-- Admin Top Navigation Header -->
-<div class="bg-burgundy-dark/90 border-b border-amber-500/30 px-4 py-3 flex items-center justify-between flex-shrink-0">
-<div class="flex items-center gap-2.5">
-<div class="w-8 h-8 rounded-full bg-amber-500/20 border border-amber-500 flex items-center justify-center text-amber-400 font-cinzel font-bold text-xs">VR</div>
-<div>
-<h3 class="text-sm sm:text-base font-bold font-cinzel gold-gradient">Admin Panel</h3>
-<p id="admin-current-user-lbl" class="text-[10px] text-amber-300/80 truncate max-w-[180px]">Staff Portal</p>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<button id="admin-logout-btn" onclick="adminLogout()" class="hidden bg-red-950/80 border border-red-500/50 text-red-300 px-3 py-1.5 rounded-lg text-[11px] uppercase tracking-wider cursor-pointer">Logout</button>
-<button onclick="closeAdminModal()" class="btn-outline-gold px-3 py-1.5 rounded-lg text-[11px] uppercase tracking-wider cursor-pointer">Close</button>
-</div>
-</div>
-​<!-- AUTH VIEW (If not logged in) -->
-<div id="admin-auth-view" class="flex-1 flex items-center justify-center p-4 overflow-y-auto">
-<div class="luxury-card max-w-sm w-full p-6 sm:p-8 rounded-2xl space-y-5 shadow-2xl">
-<div class="text-center space-y-1">
-<h2 class="text-2xl font-bold font-cinzel gold-gradient">Staff Sign In</h2>
-<p class="text-[11px] text-stone-400">Enter your credentials to manage live website.</p>
-</div>
-<div class="space-y-4">
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Admin Email</label>
-<input id="admin-login-email" type="email" value="Surajmeena.86075@gmail.com" class="admin-input" />
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Password</label>
-<input id="admin-login-pass" type="password" value="Meena@1020" class="admin-input" />
-</div>
-<button onclick="handleAdminLogin()" class="btn-gold w-full py-3.5 rounded-xl text-xs uppercase tracking-wider font-cinzel cursor-pointer">
-Sign In Securely
-</button>
-</div>
-</div>
-</div>
-​<!-- DASHBOARD VIEW (If logged in) -->
-<div id="admin-dashboard-view" class="hidden flex-1 flex flex-col overflow-hidden">
-​<!-- Mobile Swipeable Tab Bar -->
-<div class="flex overflow-x-auto gap-2 px-3 py-2.5 bg-black/80 border-b border-amber-500/20 flex-shrink-0 scrollbar-none">
-<button onclick="switchAdminTab('general')" class="admin-tab-btn px-3.5 py-2 rounded-lg text-[11px] uppercase tracking-wider font-cinzel whitespace-nowrap btn-gold cursor-pointer">General & Phone</button>
-<button onclick="switchAdminTab('hero')" class="admin-tab-btn px-3.5 py-2 rounded-lg text-[11px] uppercase tracking-wider font-cinzel whitespace-nowrap btn-outline-gold cursor-pointer">Hero Banner</button>
-<button onclick="switchAdminTab('about')" class="admin-tab-btn px-3.5 py-2 rounded-lg text-[11px] uppercase tracking-wider font-cinzel whitespace-nowrap btn-outline-gold cursor-pointer">About Us</button>
-<button onclick="switchAdminTab('products')" class="admin-tab-btn px-3.5 py-2 rounded-lg text-[11px] uppercase tracking-wider font-cinzel whitespace-nowrap btn-outline-gold cursor-pointer">Wines Catalog</button>
-<button onclick="switchAdminTab('gallery')" class="admin-tab-btn px-3.5 py-2 rounded-lg text-[11px] uppercase tracking-wider font-cinzel whitespace-nowrap btn-outline-gold cursor-pointer">Gallery Photos</button>
-<button onclick="switchAdminTab('seo')" class="admin-tab-btn px-3.5 py-2 rounded-lg text-[11px] uppercase tracking-wider font-cinzel whitespace-nowrap btn-outline-gold cursor-pointer">SEO Settings</button>
-<button onclick="switchAdminTab('legal')" class="admin-tab-btn px-3.5 py-2 rounded-lg text-[11px] uppercase tracking-wider font-cinzel whitespace-nowrap btn-outline-gold cursor-pointer">Legal Pages</button>
-<button onclick="switchAdminTab('preview')" class="admin-tab-btn px-3.5 py-2 rounded-lg text-[11px] uppercase tracking-wider font-cinzel whitespace-nowrap btn-outline-gold cursor-pointer">📱 Live Preview</button>
-</div>
-​<!-- Tab Content Scrollable Container -->
-<div class="flex-1 overflow-y-auto p-4 space-y-6">
-​<!-- TAB 1: GENERAL & CONTACT -->
-<section id="tab-general" class="admin-tab-panel space-y-5">
-<div class="luxury-card p-5 space-y-4 rounded-2xl">
-<h3 class="text-lg font-bold font-cinzel gold-gradient">Contact & Button Controls</h3>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Primary Phone & WhatsApp Number</label>
-<input id="inp-phone" type="text" class="admin-input" />
-<p class="text-[10px] text-amber-300/70 mt-1">Updates both the WhatsApp floating button & Call Now button instantly.</p>
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Concierge Email</label>
-<input id="inp-email" type="email" class="admin-input" />
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Shop Address</label>
-<input id="inp-address" type="text" class="admin-input" />
-</div>
-</div>
-​<div class="luxury-card p-5 space-y-4 rounded-2xl">
-<h3 class="text-lg font-bold font-cinzel gold-gradient">Logo & Favicon Manager</h3>
-<div class="space-y-2">
-<label class="block text-[11px] uppercase text-stone-400">Upload Logo from Phone Gallery/Camera</label>
-<div class="flex gap-2">
-<input id="logo-file-input" type="file" accept="image/*" class="admin-input text-xs file:py-1 file:px-2.5 file:bg-amber-500 file:text-black file:border-0 file:rounded cursor-pointer" />
-<button type="button" onclick="uploadImageToImgBB('logo-file-input', 'inp-logo-url')" class="btn-outline-gold px-3 py-2 text-xs cursor-pointer flex-shrink-0">Upload</button>
-</div>
-<input id="inp-logo-url" type="text" placeholder="Logo URL" class="admin-input text-xs" />
-</div>
-<div class="space-y-2 pt-2">
-<label class="block text-[11px] uppercase text-stone-400">Upload Favicon from Phone</label>
-<div class="flex gap-2">
-<input id="favicon-file-input" type="file" accept="image/*" class="admin-input text-xs file:py-1 file:px-2.5 file:bg-amber-500 file:text-black file:border-0 file:rounded cursor-pointer" />
-<button type="button" onclick="uploadImageToImgBB('favicon-file-input', 'inp-favicon-url')" class="btn-outline-gold px-3 py-2 text-xs cursor-pointer flex-shrink-0">Upload</button>
-</div>
-<input id="inp-favicon-url" type="text" placeholder="Favicon URL" class="admin-input text-xs" />
-</div>
-</div>
-</section>
-​<!-- TAB 2: HERO BANNER -->
-<section id="tab-hero" class="admin-tab-panel hidden space-y-5">
-<div class="luxury-card p-5 space-y-4 rounded-2xl">
-<h3 class="text-lg font-bold font-cinzel gold-gradient">Hero Banner Control</h3>
-<div class="space-y-4">
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Hero Heading</label>
-<input id="inp-hero-heading" type="text" class="admin-input" />
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Hero Description</label>
-<textarea id="inp-hero-desc" rows="3" class="admin-input"></textarea>
-</div>
-<div class="space-y-2">
-<label class="block text-[11px] uppercase text-stone-400">Upload Hero Background from Phone</label>
-<div class="flex gap-2">
-<input id="hero-bg-file" type="file" accept="image/*" class="admin-input text-xs file:py-1 file:px-2.5 file:bg-amber-500 file:text-black file:border-0 file:rounded cursor-pointer" />
-<button type="button" onclick="uploadImageToImgBB('hero-bg-file', 'inp-hero-bg')" class="btn-outline-gold px-3 py-2 text-xs cursor-pointer flex-shrink-0">Upload</button>
-</div>
-<input id="inp-hero-bg" type="text" placeholder="Background Image URL" class="admin-input text-xs" />
-</div>
-</div>
-</div>
-</section>
-​<!-- TAB 3: ABOUT US -->
-<section id="tab-about" class="admin-tab-panel hidden space-y-5">
-<div class="luxury-card p-5 space-y-4 rounded-2xl">
-<h3 class="text-lg font-bold font-cinzel gold-gradient">About Us Section</h3>
-<div class="space-y-4">
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">About Heading</label>
-<input id="inp-about-heading" type="text" class="admin-input" />
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">About Paragraph</label>
-<textarea id="inp-about-text" rows="4" class="admin-input"></textarea>
-</div>
-<div class="space-y-2">
-<label class="block text-[11px] uppercase text-stone-400">Upload About Photo from Phone</label>
-<div class="flex gap-2">
-<input id="about-img-file" type="file" accept="image/*" class="admin-input text-xs file:py-1 file:px-2.5 file:bg-amber-500 file:text-black file:border-0 file:rounded cursor-pointer" />
-<button type="button" onclick="uploadImageToImgBB('about-img-file', 'inp-about-img')" class="btn-outline-gold px-3 py-2 text-xs cursor-pointer flex-shrink-0">Upload</button>
-</div>
-<input id="inp-about-img" type="text" placeholder="Image URL" class="admin-input text-xs" />
-</div>
-</div>
-</div>
-</section>
-​<!-- TAB 4: WINE CATALOG PRODUCTS -->
-<section id="tab-products" class="admin-tab-panel hidden space-y-5">
-<div class="luxury-card p-5 space-y-4 rounded-2xl">
-<h3 class="text-lg font-bold font-cinzel gold-gradient">Add / Manage Wine Catalog</h3>
-<div class="space-y-3">
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Wine Name & Vintage</label>
-<input id="prod-name" type="text" placeholder="e.g., Château Margaux 2015" class="admin-input" />
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Category</label>
-<select id="prod-category" class="admin-input">
-<option value="Red Wine">Red Wine</option>
-<option value="White Wine">White Wine</option>
-<option value="Sparkling & Champagne">Sparkling & Champagne</option>
-<option value="Rosé & Reserve">Rosé & Reserve</option>
-</select>
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Origin / Region</label>
-<input id="prod-origin" type="text" placeholder="e.g., Bordeaux, France" class="admin-input" />
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Description</label>
-<textarea id="prod-desc" rows="2" class="admin-input"></textarea>
-</div>
-<div class="space-y-2">
-<label class="block text-[11px] uppercase text-stone-400">Upload Bottle Photo from Phone</label>
-<div class="flex gap-2">
-<input id="prod-img-file" type="file" accept="image/*" class="admin-input text-xs file:py-1 file:px-2.5 file:bg-amber-500 file:text-black file:border-0 file:rounded cursor-pointer" />
-<button type="button" onclick="uploadImageToImgBB('prod-img-file', 'prod-image')" class="btn-outline-gold px-3 py-2 text-xs cursor-pointer flex-shrink-0">Upload</button>
-</div>
-<input id="prod-image" type="text" placeholder="Image URL" class="admin-input text-xs" />
-</div>
-</div>
-<button type="button" onclick="addCatalogProduct()" class="btn-gold w-full py-3.5 text-xs uppercase font-cinzel cursor-pointer">+ Add Wine to Catalog</button>
-<div id="admin-products-list" class="pt-4 border-t border-amber-500/20 space-y-3"></div>
-</div>
-</section>
-​<!-- TAB 5: GALLERY MANAGER -->
-<section id="tab-gallery" class="admin-tab-panel hidden space-y-5">
-<div class="luxury-card p-5 space-y-4 rounded-2xl">
-<h3 class="text-lg font-bold font-cinzel gold-gradient">Photo Gallery Manager</h3>
-<div class="space-y-3">
-<div class="space-y-2">
-<label class="block text-[11px] uppercase text-stone-400">Upload Gallery Photo from Phone</label>
-<div class="flex gap-2">
-<input id="gal-img-file" type="file" accept="image/*" class="admin-input text-xs file:py-1 file:px-2.5 file:bg-amber-500 file:text-black file:border-0 file:rounded cursor-pointer" />
-<button type="button" onclick="uploadImageToImgBB('gal-img-file', 'gal-url')" class="btn-outline-gold px-3 py-2 text-xs cursor-pointer flex-shrink-0">Upload</button>
-</div>
-<input id="gal-url" type="text" placeholder="Image URL" class="admin-input text-xs" />
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">SEO ALT Text</label>
-<input id="gal-alt" type="text" placeholder="Subterranean vault" class="admin-input" />
-</div>
-</div>
-<button type="button" onclick="addGalleryPhoto()" class="btn-gold w-full py-3.5 text-xs uppercase font-cinzel cursor-pointer">+ Add Photo to Gallery</button>
-<div id="admin-gallery-list" class="grid grid-cols-2 gap-3 pt-4"></div>
-</div>
-</section>
-​<!-- TAB 6: SEO CONTROL -->
-<section id="tab-seo" class="admin-tab-panel hidden space-y-5">
-<div class="luxury-card p-5 space-y-4 rounded-2xl">
-<h3 class="text-lg font-bold font-cinzel gold-gradient">SEO Control Center</h3>
-<div class="space-y-4">
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">SEO Website Title</label>
-<input id="inp-seo-title" type="text" class="admin-input" />
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Meta Description</label>
-<textarea id="inp-seo-desc" rows="3" class="admin-input"></textarea>
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Meta Keywords</label>
-<input id="inp-seo-keywords" type="text" class="admin-input" />
-</div>
-</div>
-</div>
-</section>
-​<!-- TAB 7: LEGAL PAGES -->
-<section id="tab-legal" class="admin-tab-panel hidden space-y-5">
-<div class="luxury-card p-5 space-y-4 rounded-2xl">
-<h3 class="text-lg font-bold font-cinzel gold-gradient">Legal Notices Editor</h3>
-<div class="space-y-4">
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Select Legal Page</label>
-<select id="legal-select-key" onchange="loadLegalContentForEditing()" class="admin-input">
-<option value="terms">Terms & Conditions</option>
-<option value="privacy">Privacy Policy</option>
-<option value="refund">Refund Policy</option>
-<option value="disclaimer">Legal Disclaimer</option>
-<option value="responsible">Responsible Drinking</option>
-</select>
-</div>
-<div>
-<label class="block text-[11px] uppercase text-stone-400 mb-1">Content (HTML Supported)</label>
-<textarea id="legal-edit-textarea" rows="8" class="admin-input font-mono text-xs"></textarea>
-</div>
-<button onclick="saveLegalContent()" class="btn-gold w-full py-3 text-xs uppercase font-cinzel cursor-pointer">Update Legal Section</button>
-</div>
-</div>
-</section>
-​<!-- TAB 8: LIVE PREVIEW -->
-<section id="tab-preview" class="admin-tab-panel hidden space-y-4">
-<div class="luxury-card p-3 rounded-xl flex items-center justify-between">
-<span class="text-[11px] font-cinzel uppercase text-amber-400">📱 Mobile Live Preview</span>
-</div>
-<div class="border-4 border-stone-800 rounded-2xl overflow-hidden bg-black h-[420px] shadow-2xl relative">
-<iframe src="" id="live-preview-iframe" class="w-full h-full"></iframe>
-</div>
-</section>
-​</div>
-​<!-- Footer Action Bar inside Admin Panel -->
-<div class="bg-burgundy-dark/95 border-t border-amber-500/30 p-4 flex flex-col sm:flex-row items-center justify-between gap-3 flex-shrink-0">
-<p id="save-status-msg" class="text-[11px] text-amber-300 font-cinzel text-center sm:text-left"></p>
-<button onclick="saveAllSettingsToFirebase()" class="btn-gold w-full sm:w-auto px-6 py-3.5 rounded-xl text-xs uppercase font-cinzel tracking-wider cursor-pointer">
-💾 Save All Changes Live
-</button>
-</div>
-​</div>
-​</div>
-​<!-- TOAST NOTIFICATION -->
-<div id="toast-notification" class="fixed bottom-6 left-6 right-6 sm:right-auto z-50 transform translate-y-28 opacity-0 transition-all duration-300 luxury-card px-5 py-3 rounded-xl border border-amber-500 text-xs font-cinzel text-amber-300 shadow-2xl text-center sm:text-left">
-Notification
-</div>
-​<!-- FIREBASE SDKs & LOGIC -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, collection, getDocs, addDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-​const firebaseConfig = {
-apiKey: "AIzaSyAGEHWdQjMwCXrrqUdtZqeLqhfi7RFKo-g",
-authDomain: "wineshpi-w.firebaseapp.com",
-databaseURL: "https://wineshpi-w-default-rtdb.asia-southeast1.firebasedatabase.app",
-projectId: "wineshpi-w",
-storageBucket: "wineshpi-w.firebasestorage.app",
-messagingSenderId: "401861762511",
-appId: "1:401861762511:web:420a76f640022b7291c6ba",
-measurementId: "G-582T6YN5VS"
-};
-​const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-​const IMGBB_API_KEY = "6d207e02198a847aa98d0a2a901485a5";
-​const DEFAULT_STATE = {
-general: {
-shopName: "Vintner's Reserve",
-tagline: "Rare Cellar & Estates",
-phone: "+91 86075 18160",
-email: "concierge@vintnersreserve.in",
-address: "Grand Heritage Arcade, Connaught Place, New Delhi, India",
-hours: "Monday — Saturday: 11:00 AM – 10:00 PM\nSunday: By Private Appointment",
-logoUrl: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=120&q=80",
-faviconUrl: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=64&q=80"
-},
-hero: {
-heading: "The Pinnacle of Fine Wines",
-desc: "Curated selections from legendary vineyards across Bordeaux, Tuscany, Napa, and Champagne. Experience true oenological excellence.",
-bgUrl: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1920&q=80"
-},
-about: {
-heading: "A Legacy of Connoisseurship and Exceptional Cellars",
-text: "Founded on a profound passion for terroir and time-honored winemaking, Vintner's Reserve is a sanctuary for discerning collectors and enthusiasts. Every bottle in our reserve is meticulously sourced, temperature-guaranteed, and preserved in optimal subterranean conditions.",
-imgUrl: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&q=80"
-},
-seo: {
-title: "Vintner's Reserve | Rare Wines & Estates",
-desc: "Discover rare vintage wines, artisanal spirits, and exclusive cellar selections at Vintner's Reserve.",
-keywords: "wine shop, rare wine, vintage reserve, champagne, cellar selection"
-},
-legal: {
-terms: "<h3>Terms & Conditions</h3><p>By entering and using Vintner's Reserve, you agree to comply with all applicable local and national excise and alcohol consumption laws. All visitors must be of legal drinking age.</p>",
-privacy: "<h3>Privacy Policy</h3><p>We respect your privacy and confidentiality. Client inquiry data and private cellar allocations are handled with utmost discretion and security.</p>",
-refund: "<h3>Refund Policy</h3><p>Due to the delicate provenance requirements of rare vintage wines, all sales of temperature-controlled cellar allocations are final upon verification.</p>",
-disclaimer: "<h3>Legal Disclaimer</h3><p>Vintner's Reserve operates in full accordance with applicable Indian state excise regulations. We do not promote online delivery of alcoholic beverages where prohibited.</p>",
-responsible: "<h3>Responsible Drinking Information</h3><p>We strongly advocate responsible enjoyment. Please never drink and drive. Know your limits and enjoy fine wines with moderation.</p>"
-}
-};
-​let appState = JSON.parse(JSON.stringify(DEFAULT_STATE));
-let catalogProducts = [
-{ id: 'p1', name: 'Château Margaux Grand Vin 2015', category: 'Red Wine', origin: 'Bordeaux, France', desc: 'Exquisite aromas of blackcurrant, violet, and cedar. Silken tannins with decades of aging potential.', image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80' },
-{ id: 'p2', name: 'Dom Pérignon Vintage Champagne 2013', category: 'Sparkling & Champagne', origin: 'Champagne, France', desc: 'Complex notes of brioche, white peach, and citrus zest. Vibrant effervescence and creamy minerality.', image: 'https://images.unsplash.com/photo-1569919659178-3a1379301fa1?w=800&q=80' },
-{ id: 'p3', name: 'Sassicaia Tenuta San Guido 2018', category: 'Rosé & Reserve', origin: 'Tuscany, Italy', desc: 'Legendary Super Tuscan featuring dark berry fruit, Mediterranean herbs, and impeccable structure.', image: 'https://images.unsplash.com/photo-1584916312933-4f9e0a811a68?w=800&q=80' }
-];
-​let galleryPhotos = [
-{ id: 'g1', url: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&q=80', alt: 'Subterranean Vault' },
-{ id: 'g2', url: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80', alt: 'Grand Reserve Bottles' },
-{ id: 'g3', url: 'https://images.unsplash.com/photo-1569919659178-3a1379301fa1?w=800&q=80', alt: 'Champagne Flutes' }
-];
-​let activeCategoryFilter = "all";
-​window.openAdminModal = () => {
-const modal = document.getElementById('admin-modal');
-modal.classList.remove('hidden');
-modal.classList.add('flex');
-};
-​window.closeAdminModal = () => {
-const modal = document.getElementById('admin-modal');
-modal.classList.add('hidden');
-modal.classList.remove('flex');
-};
-​window.openLegalModal = (key) => {
-const titles = { terms: "Terms & Conditions", privacy: "Privacy Policy", refund: "Refund Policy", disclaimer: "Legal Disclaimer", responsible: "Responsible Drinking Information" };
-document.getElementById('legal-modal-title').innerText = titles[key] || "Legal Notice";
-document.getElementById('legal-modal-body').innerHTML = appState.legal[key] || "Content unavailable.";
-const modal = document.getElementById('legal-modal');
-modal.classList.remove('hidden');
-modal.classList.add('flex');
-};
-​window.closeLegalModal = () => {
-const modal = document.getElementById('legal-modal');
-modal.classList.add('hidden');
-modal.classList.remove('flex');
-};
-​window.switchAdminTab = (tabName) => {
-document.querySelectorAll('.admin-tab-panel').forEach(el => el.classList.add('hidden'));
-document.querySelectorAll('.admin-tab-btn').forEach(btn => {
-btn.classList.remove('btn-gold');
-btn.classList.add('btn-outline-gold');
-});
-document.getElementById(tab-${tabName}).classList.remove('hidden');
-event.currentTarget.classList.remove('btn-outline-gold');
-event.currentTarget.classList.add('btn-gold');
-​if (tabName === 'preview') {
-document.getElementById('live-preview-iframe').src = window.location.href;
-}
-};
-​window.uploadImageToImgBB = async (fileInputId, targetUrlInputId) => {
-const fileInput = document.getElementById(fileInputId);
-const targetInput = document.getElementById(targetUrlInputId);
-if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
-showToast("Please select an image file from your phone first.", "error");
-return;
-}
-const file = fileInput.files[0];
-const formData = new FormData();
-formData.append("image", file);
-​showToast("Uploading image from mobile to cloud...", "info");
-​try {
-const response = await fetch(https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}, {
-method: "POST",
-body: formData
-});
-const data = await response.json();
-if (data && data.success && data.data && data.data.url) {
-targetInput.value = data.data.url;
-showToast("Image uploaded successfully!", "success");
-} else {
-showToast("Image upload failed. Try again.", "error");
-}
-} catch (err) {
-showToast(Upload error: ${err.message}, "error");
-}
-};
-​window.handleAdminLogin = async () => {
-const email = document.getElementById('admin-login-email').value.trim();
-const pass = document.getElementById('admin-login-pass').value.trim();
-​if (!email || !pass) {
-showToast("Please enter email and password.", "error");
-return;
-}
-​try {
-await signInWithEmailAndPassword(auth, email, pass);
-showToast("Successfully signed in as Admin!", "success");
-} catch (err) {
-showToast(Login failed: ${err.message}, "error");
-}
-};
-​window.adminLogout = async () => {
-try {
-await signOut(auth);
-showToast("Logged out successfully.", "success");
-} catch (err) {
-showToast(Logout error: ${err.message}, "error");
-}
-};
-​onAuthStateChanged(auth, (user) => {
-if (user && user.email.toLowerCase() === "surajmeena.86075@gmail.com") {
-document.getElementById('admin-auth-view').classList.add('hidden');
-document.getElementById('admin-dashboard-view').classList.remove('hidden');
-document.getElementById('admin-logout-btn').classList.remove('hidden');
-document.getElementById('admin-current-user-lbl').innerText = user.email;
-populateAdminForm();
-} else {
-document.getElementById('admin-auth-view').classList.remove('hidden');
-document.getElementById('admin-dashboard-view').classList.add('hidden');
-document.getElementById('admin-logout-btn').classList.add('hidden');
-document.getElementById('admin-current-user-lbl').innerText = "Staff Portal";
-}
-});
-​function populateAdminForm() {
-document.getElementById('inp-phone').value = appState.general.phone;
-document.getElementById('inp-email').value = appState.general.email;
-document.getElementById('inp-address').value = appState.general.address;
-document.getElementById('inp-logo-url').value = appState.general.logoUrl;
-document.getElementById('inp-favicon-url').value = appState.general.faviconUrl;
-​document.getElementById('inp-hero-heading').value = appState.hero.heading;
-document.getElementById('inp-hero-desc').value = appState.hero.desc;
-document.getElementById('inp-hero-bg').value = appState.hero.bgUrl;
-​document.getElementById('inp-about-heading').value = appState.about.heading;
-document.getElementById('inp-about-text').value = appState.about.text;
-document.getElementById('inp-about-img').value = appState.about.imgUrl;
-​document.getElementById('inp-seo-title').value = appState.seo.title;
-document.getElementById('inp-seo-desc').value = appState.seo.desc;
-document.getElementById('inp-seo-keywords').value = appState.seo.keywords;
-​loadLegalContentForEditing();
-renderAdminProductsList();
-renderAdminGalleryList();
-}
-​window.loadLegalContentForEditing = () => {
-const key = document.getElementById('legal-select-key').value;
-document.getElementById('legal-edit-textarea').value = appState.legal[key] || "";
-};
-​window.saveLegalContent = () => {
-const key = document.getElementById('legal-select-key').value;
-const val = document.getElementById('legal-edit-textarea').value;
-appState.legal[key] = val;
-showToast("Legal section updated in memory. Click Save All to persist.", "info");
-};
-​window.addCatalogProduct = async () => {
-const name = document.getElementById('prod-name').value.trim();
-const category = document.getElementById('prod-category').value;
-const origin = document.getElementById('prod-origin').value.trim();
-const desc = document.getElementById('prod-desc').value.trim();
-const image = document.getElementById('prod-image').value.trim();
-​if (!name || !image) {
-showToast("Please provide wine name and image URL.", "error");
-return;
-}
-​const newProd = { name, category, origin, desc, image };
-try {
-const docRef = await addDoc(collection(db, "products"), newProd);
-catalogProducts.push({ id: docRef.id, ...newProd });
-renderCatalog();
-renderAdminProductsList();
-document.getElementById('prod-name').value = "";
-document.getElementById('prod-desc').value = "";
-document.getElementById('prod-image').value = "";
-showToast("Wine added successfully!", "success");
-} catch (err) {
-showToast(Error: ${err.message}, "error");
-}
-};
-​window.deleteCatalogProduct = async (id) => {
-try {
-await deleteDoc(doc(db, "products", id));
-catalogProducts = catalogProducts.filter(p => p.id !== id);
-renderCatalog();
-renderAdminProductsList();
-showToast("Wine removed.", "success");
-} catch (err) {
-showToast(Error: ${err.message}, "error");
-}
-};
-​function renderAdminProductsList() {
-const listDiv = document.getElementById('admin-products-list');
-if (!listDiv) return;
-listDiv.innerHTML = catalogProducts.map(p => <div class="flex items-center justify-between p-3 bg-black/50 border border-amber-500/20 rounded-xl gap-2"> <div class="flex items-center gap-2.5 overflow-hidden"> <img src="${p.image}" class="w-10 h-10 rounded object-cover border border-amber-500/30 flex-shrink-0"> <div class="truncate"> <h4 class="text-xs font-bold font-cinzel text-amber-300 truncate">${p.name}</h4> <p class="text-[10px] text-stone-400">${p.category}</p> </div> </div> <button onclick="deleteCatalogProduct('${p.id}')" class="text-xs bg-red-950/80 border border-red-500/50 text-red-300 px-2.5 py-1.5 rounded flex-shrink-0 cursor-pointer">Delete</button> </div>).join('');
-}
-​window.addGalleryPhoto = async () => {
-const url = document.getElementById('gal-url').value.trim();
-const alt = document.getElementById('gal-alt').value.trim() || "Cellar impression";
-​if (!url) {
-showToast("Please provide image URL.", "error");
-return;
-}
-​const newPhoto = { url, alt };
-try {
-const docRef = await addDoc(collection(db, "gallery"), newPhoto);
-galleryPhotos.push({ id: docRef.id, ...newPhoto });
-renderGallery();
-renderAdminGalleryList();
-document.getElementById('gal-url').value = "";
-document.getElementById('gal-alt').value = "";
-showToast("Photo added!", "success");
-} catch (err) {
-showToast(Error: ${err.message}, "error");
-}
-};
-​window.deleteGalleryPhoto = async (id) => {
-try {
-await deleteDoc(doc(db, "gallery", id));
-galleryPhotos = galleryPhotos.filter(g => g.id !== id);
-renderGallery();
-renderAdminGalleryList();
-showToast("Photo deleted.", "success");
-} catch (err) {
-showToast(Error: ${err.message}, "error");
-}
-};
-​function renderAdminGalleryList() {
-const listDiv = document.getElementById('admin-gallery-list');
-if (!listDiv) return;
-listDiv.innerHTML = galleryPhotos.map(g => <div class="relative group rounded-xl overflow-hidden border border-amber-500/30 h-24 bg-black"> <img src="${g.url}" class="w-full h-full object-cover"> <button onclick="deleteGalleryPhoto('${g.id}')" class="absolute top-1.5 right-1.5 bg-red-950 text-red-300 border border-red-500 w-6 h-6 rounded-full text-xs flex items-center justify-center cursor-pointer">✕</button> </div>).join('');
-}
-​window.saveAllSettingsToFirebase = async () => {
-appState.general.phone = document.getElementById('inp-phone').value.trim();
-appState.general.email = document.getElementById('inp-email').value.trim();
-appState.general.address = document.getElementById('inp-address').value.trim();
-appState.general.logoUrl = document.getElementById('inp-logo-url').value.trim();
-appState.general.faviconUrl = document.getElementById('inp-favicon-url').value.trim();
-​appState.hero.heading = document.getElementById('inp-hero-heading').value.trim();
-appState.hero.desc = document.getElementById('inp-hero-desc').value.trim();
-appState.hero.bgUrl = document.getElementById('inp-hero-bg').value.trim();
-​appState.about.heading = document.getElementById('inp-about-heading').value.trim();
-appState.about.text = document.getElementById('inp-about-text').value.trim();
-appState.about.imgUrl = document.getElementById('inp-about-img').value.trim();
-​appState.seo.title = document.getElementById('inp-seo-title').value.trim();
-appState.seo.desc = document.getElementById('inp-seo-desc').value.trim();
-appState.seo.keywords = document.getElementById('inp-seo-keywords').value.trim();
-​try {
-await setDoc(doc(db, "site_settings", "config"), appState);
-applyStateToUI();
-showToast("All changes successfully saved and published live!", "success");
-} catch (err) {
-showToast(Save error: ${err.message}, "error");
-}
-};
-​async function loadStateFromFirebase() {
-try {
-const snap = await getDoc(doc(db, "site_settings", "config"));
-if (snap.exists()) {
-appState = snap.data();
-}
-const prodSnap = await getDocs(collection(db, "products"));
-if (!prodSnap.empty) {
-catalogProducts = prodSnap.docs.map(d => ({ id: d.id, ...d.data() }));
-}
-const galSnap = await getDocs(collection(db, "gallery"));
-if (!galSnap.empty) {
-galleryPhotos = galSnap.docs.map(d => ({ id: d.id, ...d.data() }));
-}
-applyStateToUI();
-} catch (err) {
-console.warn("Using default state:", err);
-applyStateToUI();
-}
-}
-​function applyStateToUI() {
-document.getElementById('nav-brand-name').innerText = appState.general.shopName;
-document.getElementById('nav-brand-tagline').innerText = appState.general.tagline;
-document.getElementById('nav-logo-img').src = appState.general.logoUrl;
-document.getElementById('footer-logo-img').src = appState.general.logoUrl;
-document.getElementById('footer-brand-name').innerText = appState.general.shopName;
-document.getElementById('dynamic-favicon').href = appState.general.faviconUrl;
-​const cleanPhone = appState.general.phone.replace(/[^0-9+]/g, '');
-const rawDigits = appState.general.phone.replace(/[^0-9]/g, '');
-document.getElementById('nav-phone-text').innerText = appState.general.phone;
-document.getElementById('nav-phone-link').href = tel:${cleanPhone};
-document.getElementById('float-call-btn').href = tel:${cleanPhone};
-document.getElementById('float-wa-btn').href = https://wa.me/91${rawDigits.slice(-10)};
-​document.getElementById('hero-heading').innerHTML = appState.hero.heading.replace("Fine Wines", '<span class="gold-gradient">Fine Wines</span>');
-document.getElementById('hero-desc').innerText = appState.hero.desc;
-document.getElementById('hero-section').style.backgroundImage = linear-gradient(to bottom, rgba(11,7,8,0.7), rgba(11,7,8,0.95)), url('${appState.hero.bgUrl}');
-​document.getElementById('about-heading').innerText = appState.about.heading;
-document.getElementById('about-text').innerText = appState.about.text;
-document.getElementById('about-img').src = appState.about.imgUrl;
-​document.getElementById('info-address').innerText = appState.general.address;
-document.getElementById('info-hours').innerHTML = appState.general.hours.replace(/\n/g, '
-');
-document.getElementById('info-phone').innerHTML = Phone: ${appState.general.phone}<br>Email: ${appState.general.email};
-​document.getElementById('contact-phone-disp').innerText = appState.general.phone;
-document.getElementById('contact-phone-disp').href = tel:${cleanPhone};
-document.getElementById('contact-email-disp').innerText = appState.general.email;
-document.getElementById('contact-email-disp').href = mailto:${appState.general.email};
-​document.getElementById('meta-title').innerText = appState.seo.title;
-document.getElementById('meta-desc').content = appState.seo.desc;
-document.getElementById('meta-keywords').content = appState.seo.keywords;
-​document.getElementById('footer-year').innerText = new Date().getFullYear();
-​renderCatalog();
-renderGallery();
-}
-​window.filterCatalog = (cat) => {
-activeCategoryFilter = cat;
-document.querySelectorAll('.catalog-filter-btn').forEach(b => {
-b.classList.remove('btn-gold');
-b.classList.add('btn-outline-gold');
-});
-event.currentTarget.classList.remove('btn-outline-gold');
-event.currentTarget.classList.add('btn-gold');
-renderCatalog();
-};
-​function renderCatalog() {
-const grid = document.getElementById('public-products-grid');
-if (!grid) return;
-const filtered = activeCategoryFilter === 'all'
-? catalogProducts
-: catalogProducts.filter(p => p.category === activeCategoryFilter);
-​grid.innerHTML = filtered.map(p => <div class="luxury-card rounded-2xl overflow-hidden flex flex-col justify-between group"> <div class="relative h-56 sm:h-64 overflow-hidden bg-black/60"> <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"> <span class="absolute top-3 left-3 bg-black/80 border border-amber-500/50 text-amber-300 text-[10px] uppercase px-2.5 py-1 rounded-full font-cinzel">${p.category}</span> </div> <div class="p-5 space-y-3 flex-1 flex flex-col justify-between"> <div class="space-y-1"> <p class="text-[10px] uppercase tracking-wider text-amber-400 font-cinzel">${p.origin}</p> <h3 class="text-lg font-bold font-cinzel text-white">${p.name}</h3> <p class="text-xs text-stone-300 font-light line-clamp-2">${p.desc}</p> </div> <a href="https://wa.me/918607518160?text=I%20would%20like%20to%20inquire%20about%20allocation%20for%20${encodeURIComponent(p.name)}" target="_blank" class="btn-outline-gold w-full py-2.5 rounded-xl text-xs uppercase font-cinzel tracking-wider text-center block"> Inquire Allocation </a> </div> </div>).join('');
-}
-​function renderGallery() {
-const grid = document.getElementById('public-gallery-grid');
-if (!grid) return;
-grid.innerHTML = galleryPhotos.map(g => <div class="rounded-xl overflow-hidden border border-amber-500/30 h-52 sm:h-64 relative group bg-black"> <img src="${g.url}" alt="${g.alt}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"> <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"> <span class="text-[11px] uppercase tracking-widest text-amber-300 font-cinzel">${g.alt}</span> </div> </div>).join('');
-}
-​function showToast(message, type = "success") {
-const toast = document.getElementById('toast-notification');
-toast.innerText = message;
-toast.className = fixed bottom-6 left-4 right-4 sm:left-6 sm:right-auto z-50 transform translate-y-0 opacity-100 transition-all duration-300 luxury-card px-5 py-3 rounded-xl border text-xs font-cinzel shadow-2xl text-center sm:text-left ${type === 'error' ? 'border-red-500 text-red-300' : 'border-amber-500 text-amber-300'};
-setTimeout(() => {
-toast.className = fixed bottom-6 left-4 right-4 sm:left-6 sm:right-auto z-50 transform translate-y-28 opacity-0 transition-all duration-300 luxury-card px-5 py-3 rounded-xl border text-xs font-cinzel shadow-2xl text-center sm:text-left;
-}, 4000);
-}
-​window.addEventListener('DOMContentLoaded', () => {
-loadStateFromFirebase();
-});
-</script>
+<body>
+
+  <!-- Toast Feedback -->
+  <div id="toast-banner" role="status" aria-live="polite"></div>
+
+  <!-- =========================================================
+       PUBLIC LUXURY STOREFRONT (NO AGE GATE POPUP)
+       ========================================================= -->
+  <header id="site-header" class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-lockup" aria-label="Home">
+        <img id="pub-header-logo" class="brand-logo-img" style="display:none;" alt="Brand Logo" />
+        <svg id="pub-header-svg" width="38" height="38" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="60" height="60" rx="12" stroke="#D4AF37" stroke-width="2" fill="#2B0912"/>
+          <path d="M18 18L32 48L46 18H39L32 34L25 18H18Z" fill="#D4AF37"/>
+        </svg>
+        <div class="brand-wordmark">
+          <span id="pub-brand-name" class="brand-title">VINTORA</span>
+          <span id="pub-brand-tagline" class="brand-sub">PREMIUM WINE &amp; SPIRITS</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#about" id="nav-label-about">Heritage</a>
+        <a href="#collection" id="nav-label-collection">All Brands</a>
+        <a href="#gallery" id="nav-label-gallery">Cellar Gallery</a>
+        <a href="#why-us" id="nav-label-why">Distinction</a>
+        <a href="#contact" id="nav-label-contact">Visit &amp; Concierge</a>
+      </nav>
+
+      <div class="header-actions">
+        <span class="badge-24h desktop-only">
+          <span class="pulse-dot"></span>
+          <span id="pub-header-hours-badge">Open 24 Hours</span>
+        </span>
+        <button class="mobile-menu-btn" id="open-mobile-menu" aria-label="Open Menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-label="Mobile Navigation">
+    <button id="close-mobile-menu" style="position:absolute;top:24px;right:24px;color:#D4AF37;font-size:2rem;" aria-label="Close Menu">&times;</button>
+    <a href="#about" class="mobile-nav-link">Heritage</a>
+    <a href="#collection" class="mobile-nav-link">All Brands</a>
+    <a href="#gallery" class="mobile-nav-link">Cellar Gallery</a>
+    <a href="#why-us" class="mobile-nav-link">Distinction</a>
+    <a href="#contact" class="mobile-nav-link">Visit &amp; Concierge</a>
+    <span class="badge-24h"><span class="pulse-dot"></span> <span id="mob-hours-badge">Open 24 Hours</span></span>
+  </div>
+
+  <main id="top">
+    <!-- 1. HERO SECTION -->
+    <section id="sec-hero" class="hero-section">
+      <img id="pub-hero-img" class="hero-bg" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1800&q=85" alt="VINTORA Luxury Wine Cellar" />
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-eyebrow" id="pub-hero-eyebrow">OPEN 24 HOURS • ALL INTERNATIONAL &amp; DOMESTIC BRANDS</div>
+        <h1 class="hero-headline" id="pub-hero-headline">Curated Rare Vintages &amp; Prestigious Spirits</h1>
+        <p class="hero-subheadline" id="pub-hero-subheadline">Experience an extraordinary sanctuary of fine wines, aged single malts, French champagnes, and every celebrated spirit brand — welcoming connoisseurs 24 hours a day.</p>
+        <div class="hero-cta-group">
+          <a href="#collection" class="btn-luxury" id="pub-hero-cta1">Explore All Brands</a>
+          <a href="#contact" class="btn-outline" id="pub-hero-cta2">Concierge &amp; Location</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALL BRANDS RIBBON -->
+    <div class="brands-ribbon">
+      <div class="container brands-track" id="pub-brands-ribbon">
+        <span>OPEN 24 HOURS</span>
+        <span>•</span>
+        <span>ALL PREMIUM BRANDS AVAILABLE</span>
+        <span>•</span>
+        <span>SINGLE MALTS</span>
+        <span>•</span>
+        <span>GRAND CRU WINES</span>
+        <span>•</span>
+        <span>CHAMPAGNE &amp; COGNAC</span>
+      </div>
+    </div>
+
+    <!-- 2. ABOUT & HERITAGE -->
+    <section id="about" class="section-block">
+      <div class="container editorial-grid">
+        <div class="editorial-img-wrap">
+          <img id="pub-about-img" src="https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=1100&q=85" alt="Sommelier Wine Pouring" loading="lazy" />
+        </div>
+        <div class="editorial-copy">
+          <span class="section-kicker" id="pub-about-kicker">THE HOUSE OF VINTORA</span>
+          <h3 id="pub-about-title">Where Timeless Heritage Meets Modern Luxury</h3>
+          <p id="pub-about-p1">VINTORA was conceived as an architectural haven for discerning collectors and spirited celebrations. Every bottle in our climate-controlled gallery is sourced directly through authorized channels to guarantee impeccable provenance.</p>
+          <p id="pub-about-p2">Whether you seek a celebrated everyday label, a celebratory champagne, or a rare cask-strength single malt at any hour of the day or night, our boutique remains open 24 hours with every major brand under one roof.</p>
+          <div class="pillars-grid">
+            <div class="pillar-item">
+              <strong id="pub-stat1-val">24 / 7</strong>
+              <span id="pub-stat1-lbl">Always Open Service</span>
+            </div>
+            <div class="pillar-item">
+              <strong id="pub-stat2-val">100%</strong>
+              <span id="pub-stat2-lbl">All Brands &amp; Labels</span>
+            </div>
+            <div class="pillar-item">
+              <strong id="pub-stat3-val">Authentic</strong>
+              <span id="pub-stat3-lbl">Verified Provenance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURED COLLECTION & ALL BRANDS SHOWCASE -->
+    <section id="collection" class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker" id="pub-col-kicker">CURATED PORTFOLIO</span>
+          <h2 class="section-title" id="pub-col-title">Signature Spirits &amp; All Brands</h2>
+          <p class="section-desc" id="pub-col-desc">From iconic Scotch single malts and prestige cuvée champagnes to beloved domestic and imported labels — every brand is available in-store 24 hours.</p>
+        </div>
+        <div class="products-grid" id="pub-products-grid"></div>
+      </div>
+    </section>
+
+    <!-- 4. PREMIUM CELLAR GALLERY -->
+    <section id="gallery" class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker" id="pub-gal-kicker">VISUAL ARCHIVE</span>
+          <h2 class="section-title" id="pub-gal-title">Inside The Boutique &amp; Cellar</h2>
+          <p class="section-desc" id="pub-gal-desc">A glimpse into our temperature-calibrated vaults, tasting counter, and curated displays.</p>
+        </div>
+        <div class="gallery-grid" id="pub-gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- 5. WHY CHOOSE US -->
+    <section id="why-us" class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">THE VINTORA STANDARD</span>
+          <h2 class="section-title">Uncompromising Excellence</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="feature-num">01 / AVAILABILITY</span>
+            <h4>Open 24 Hours Daily</h4>
+            <p>Day or midnight, our boutique doors and concierge desk remain open 24 hours for effortless in-store selection.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-num">02 / PORTFOLIO</span>
+            <h4>All Brands Under One Roof</h4>
+            <p>Complete repertoire spanning single malts, blended Scotch, fine wines, vodka, gin, rum, tequila, and craft beers.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-num">03 / PRESERVATION</span>
+            <h4>Climate-Calibrated Storage</h4>
+            <p>Fine wines and vintage champagnes rest in humidity- and temperature-regulated conditions to preserve peak character.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-num">04 / AUTHENTICITY</span>
+            <h4>100% Genuine Sourcing</h4>
+            <p>Every bottle carries verified batch integrity and authorized excise compliance for complete peace of mind.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT, HOURS & GOOGLE MAPS -->
+    <section id="contact" class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">PRIVATE CONCIERGE &amp; BOUTIQUE</span>
+          <h2 class="section-title">Visit VINTORA</h2>
+          <p class="section-desc">Reach our desk directly via phone, WhatsApp, or email for brand availability and boutique directions.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="info-panel">
+            <div class="info-row">
+              <span class="info-label">Boutique Address</span>
+              <div class="info-value" id="pub-contact-address">VINTORA Flagship Wine &amp; Spirits Boutique, Main Boulevard</div>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Operating Hours</span>
+              <div class="info-value gold-text" id="pub-contact-hours">Open 24 Hours — Monday to Sunday</div>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Direct Telephone &amp; WhatsApp</span>
+              <div class="info-value">
+                <a id="pub-contact-phone-link" href="tel:+918607518160">+91 86075 18160</a>
+              </div>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Official Concierge Email</span>
+              <div class="info-value">
+                <a id="pub-contact-email-link" href="mailto:Surajmeena.86075@gmail.com">Surajmeena.86075@gmail.com</a>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;">
+              <a id="pub-btn-whatsapp-card" href="https://wa.me/918607518160" target="_blank" rel="noopener" class="btn-luxury" style="flex:1;">WhatsApp Concierge</a>
+              <a id="pub-btn-call-card" href="tel:+918607518160" class="btn-outline" style="flex:1;">Call Boutique</a>
+            </div>
+          </div>
+
+          <div>
+            <iframe id="pub-google-map" class="map-frame" title="Boutique Location Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Hisar,Haryana,India&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PREMIUM FOOTER -->
+  <footer id="site-footer" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-lockup" style="margin-bottom:16px;">
+            <img id="pub-footer-logo" class="brand-logo-img" style="display:none;" alt="Footer Logo" />
+            <div class="brand-wordmark">
+              <span id="pub-footer-brand-name" class="brand-title">VINTORA</span>
+              <span id="pub-footer-brand-tag" class="brand-sub">PREMIUM WINE &amp; SPIRITS</span>
+            </div>
+          </div>
+          <p id="pub-footer-desc" class="muted-text" style="font-size:0.9rem;max-width:340px;">
+            A sanctuary of fine wines, rare single malts, and all celebrated spirits. Open 24 hours for discerning patrons.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <div class="footer-links">
+            <a href="#about">Heritage &amp; Story</a>
+            <a href="#collection">All Brands Portfolio</a>
+            <a href="#gallery">Cellar Gallery</a>
+            <a href="#contact">Boutique Location</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Policies &amp; Compliance</h5>
+          <div class="footer-links">
+            <button type="button" onclick="openLegalModal('responsible')">Responsible Drinking</button>
+            <button type="button" onclick="openLegalModal('age')">Legal Age Notice</button>
+            <button type="button" onclick="openLegalModal('privacy')">Privacy Policy</button>
+            <button type="button" onclick="openLegalModal('terms')">Terms &amp; Conditions</button>
+            <button type="button" onclick="openLegalModal('disclaimer')">Legal Disclaimer</button>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <div class="footer-links">
+            <a id="pub-footer-phone" href="tel:+918607518160">+91 86075 18160</a>
+            <a id="pub-footer-email" href="mailto:Surajmeena.86075@gmail.com">Surajmeena.86075@gmail.com</a>
+            <a id="pub-social-ig" href="#" target="_blank" rel="noopener">Instagram</a>
+            <a id="pub-social-fb" href="#" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span id="pub-copyright">© 2026 VINTORA Premium Wine &amp; Spirits. All Rights Reserved. Please drink responsibly.</span>
+        <!-- Subtle discreet link for owner only -->
+        <button type="button" id="open-owner-login" class="stealth-portal-link" aria-label="Owner Access">Concierge Portal</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP & CALL BUTTONS -->
+  <div id="floating-concierge" class="floating-concierge">
+    <a id="float-whatsapp-link" class="float-btn float-whatsapp" href="https://wa.me/918607518160" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+    </a>
+    <a id="float-call-link" class="float-btn float-call" href="tel:+918607518160" aria-label="Call Now">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+  </div>
+
+  <!-- LEGAL POLICY VIEWER MODAL -->
+  <div id="legal-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;border-bottom:1px solid rgba(212,175,55,0.2);padding-bottom:12px;">
+        <h3 id="legal-modal-title" class="font-display gold-text" style="font-size:1.25rem;">Policy</h3>
+        <button type="button" onclick="closeLegalModal()" style="color:#D4AF37;font-size:1.8rem;">&times;</button>
+      </div>
+      <div id="legal-modal-body" style="color:#D6CEC4;white-space:pre-line;font-size:0.95rem;line-height:1.75;"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       STEALTH OWNER LOGIN MODAL (HIDDEN FROM PUBLIC VIEW)
+       ========================================================= -->
+  <div id="admin-auth-modal" role="dialog" aria-modal="true" aria-label="Owner Authentication">
+    <div class="modal-card" style="max-width:420px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:0.25em;color:#D4AF37;text-transform:uppercase;">Authorized Access Only</span>
+          <h3 class="font-display" style="font-size:1.25rem;margin-top:4px;">Owner Control Suite</h3>
+        </div>
+        <button type="button" id="close-auth-modal" style="color:#B8AFA6;font-size:1.7rem;">&times;</button>
+      </div>
+      <form id="owner-login-form">
+        <div class="form-group">
+          <label for="owner-email">Administrator Email</label>
+          <input type="email" id="owner-email" class="admin-input" placeholder="Surajmeena.86075@gmail.com" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="owner-password">Password</label>
+          <input type="password" id="owner-password" class="admin-input" placeholder="••••••••" required autocomplete="current-password" />
+        </div>
+        <div id="auth-error-msg" style="color:#F87171;font-size:0.84rem;margin-bottom:14px;display:none;"></div>
+        <button type="submit" id="owner-login-submit" class="btn-luxury" style="width:100%;">Verify &amp; Enter Dashboard</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       COMPLETE MOBILE-FIRST OWNER ADMIN PANEL (ZERO STORAGE DEPENDENCY)
+       ========================================================= -->
+  <div id="admin-dashboard-shell" aria-label="Owner Administration Dashboard">
+    <div class="admin-topbar">
+      <div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:#D4AF37;letter-spacing:0.16em;">VINTORA COMMAND</div>
+        <div id="admin-user-badge" style="font-size:0.72rem;color:#B8AFA6;">Verified Owner</div>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button type="button" id="btn-preview-site" style="padding:8px 14px;border:1px solid #D4AF37;color:#D4AF37;border-radius:6px;font-size:0.78rem;">View Live Site</button>
+        <button type="button" id="btn-owner-logout" style="padding:8px 14px;background:#4A0E1C;color:#F8F5F0;border-radius:6px;font-size:0.78rem;">Logout</button>
+      </div>
+    </div>
+
+    <!-- Scrollable Mobile Navigation Tabs -->
+    <div class="admin-tabs-bar" role="tablist">
+      <button type="button" class="admin-tab-btn active" data-tab="tab-brand">1. Brand &amp; Logo</button>
+      <button type="button" class="admin-tab-btn" data-tab="tab-header-footer">2. Header &amp; Footer</button>
+      <button type="button" class="admin-tab-btn" data-tab="tab-homepage">3. Hero &amp; Sections</button>
+      <button type="button" class="admin-tab-btn" data-tab="tab-products">4. All Brands / Products</button>
+      <button type="button" class="admin-tab-btn" data-tab="tab-gallery">5. Photo Gallery</button>
+      <button type="button" class="admin-tab-btn" data-tab="tab-contact">6. Phone, WhatsApp &amp; Gmail</button>
+      <button type="button" class="admin-tab-btn" data-tab="tab-seo">7. Google SEO &amp; Meta</button>
+      <button type="button" class="admin-tab-btn" data-tab="tab-theme">8. Theme &amp; Colors</button>
+      <button type="button" class="admin-tab-btn" data-tab="tab-legal">9. Legal Policies</button>
+    </div>
+
+    <div class="admin-workspace">
+
+      <!-- TAB 1: BRAND, WEBSITE NAME, LOGO & FAVICON (DIRECT PHOTO UPLOAD WITHOUT STORAGE) -->
+      <div id="tab-brand" class="admin-panel-view active">
+        <div class="admin-card">
+          <h3>Website Identity, Logo &amp; Favicon (Direct Photo Upload)</h3>
+          <p style="font-size:0.82rem;color:#B8AFA6;margin-bottom:16px;">Select any image from your phone gallery—it automatically optimizes and saves directly into Firestore with zero storage bucket errors.</p>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Website Name</label>
+              <input type="text" id="inp-brand-name" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label>Brand Sub-Tagline</label>
+              <input type="text" id="inp-brand-tagline" class="admin-input" />
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Website Logo (Upload Photo or Paste URL)</label>
+              <input type="text" id="inp-logo-url" class="admin-input" placeholder="Paste image URL or upload below" />
+              <div class="upload-box">
+                <input type="file" accept="image/*" onchange="handleDirectImageUpload(event, 'inp-logo-url', 'prev-logo', 420)" />
+                <img id="prev-logo" class="preview-thumb" style="display:none;" alt="Logo Preview" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Browser Favicon Icon (Upload Photo or Paste URL)</label>
+              <input type="text" id="inp-favicon-url" class="admin-input" placeholder="Paste icon URL or upload below" />
+              <div class="upload-box">
+                <input type="file" accept="image/*" onchange="handleDirectImageUpload(event, 'inp-favicon-url', 'prev-favicon', 128)" />
+                <img id="prev-favicon" class="preview-thumb" style="display:none;max-height:80px;width:80px;margin:10px auto 0;" alt="Favicon Preview" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: HEADER & FOOTER COMPLETE CONTROL -->
+      <div id="tab-header-footer" class="admin-panel-view">
+        <div class="admin-card">
+          <h3>Header Navigation &amp; Top Badge</h3>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Top 24-Hour Status Badge Text</label>
+              <input type="text" id="inp-header-badge" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label>Sticky Header Mode</label>
+              <select id="inp-header-sticky" class="admin-select">
+                <option value="true">Sticky (Always Visible on Scroll)</option>
+                <option value="false">Static (Top Only)</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="form-group"><label>Menu Link 1</label><input type="text" id="inp-nav-1" class="admin-input" /></div>
+            <div class="form-group"><label>Menu Link 2</label><input type="text" id="inp-nav-2" class="admin-input" /></div>
+            <div class="form-group"><label>Menu Link 3</label><input type="text" id="inp-nav-3" class="admin-input" /></div>
+            <div class="form-group"><label>Menu Link 4</label><input type="text" id="inp-nav-4" class="admin-input" /></div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <h3>Footer Content &amp; Social Media Links</h3>
+          <div class="form-group">
+            <label>Footer Brand Description</label>
+            <textarea id="inp-footer-desc" class="admin-textarea"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Copyright Notice</label>
+            <input type="text" id="inp-copyright" class="admin-input" />
+          </div>
+          <div class="grid-2">
+            <div class="form-group"><label>Instagram URL</label><input type="url" id="inp-social-ig" class="admin-input" /></div>
+            <div class="form-group"><label>Facebook URL</label><input type="url" id="inp-social-fb" class="admin-input" /></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: HERO BANNER, PHOTOS & SECTION VISIBILITY -->
+      <div id="tab-homepage" class="admin-panel-view">
+        <div class="admin-card">
+          <h3>Hero Banner &amp; Background Photo</h3>
+          <div class="form-group">
+            <label>Hero Eyebrow Line</label>
+            <input type="text" id="inp-hero-eyebrow" class="admin-input" />
+          </div>
+          <div class="form-group">
+            <label>Main Hero Headline</label>
+            <input type="text" id="inp-hero-headline" class="admin-input" />
+          </div>
+          <div class="form-group">
+            <label>Hero Subheadline</label>
+            <textarea id="inp-hero-sub" class="admin-textarea"></textarea>
+          </div>
+          <div class="grid-2">
+            <div class="form-group"><label>Primary Button Text</label><input type="text" id="inp-hero-cta1" class="admin-input" /></div>
+            <div class="form-group"><label>Secondary Button Text</label><input type="text" id="inp-hero-cta2" class="admin-input" /></div>
+          </div>
+          <div class="form-group">
+            <label>Hero Background Photo (Upload from Phone or Paste URL)</label>
+            <input type="text" id="inp-hero-img" class="admin-input" />
+            <div class="upload-box">
+              <input type="file" accept="image/*" onchange="handleDirectImageUpload(event, 'inp-hero-img', 'prev-hero', 1280)" />
+              <img id="prev-hero" class="preview-thumb" alt="Hero Preview" />
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <h3>About Section &amp; Story Photo</h3>
+          <div class="form-group"><label>About Section Heading</label><input type="text" id="inp-about-title" class="admin-input" /></div>
+          <div class="form-group"><label>Paragraph 1</label><textarea id="inp-about-p1" class="admin-textarea"></textarea></div>
+          <div class="form-group"><label>Paragraph 2</label><textarea id="inp-about-p2" class="admin-textarea"></textarea></div>
+          <div class="form-group">
+            <label>About Section Photo</label>
+            <input type="text" id="inp-about-img" class="admin-input" />
+            <div class="upload-box">
+              <input type="file" accept="image/*" onchange="handleDirectImageUpload(event, 'inp-about-img', 'prev-about', 900)" />
+              <img id="prev-about" class="preview-thumb" alt="About Preview" />
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <h3>Show / Hide Website Sections</h3>
+          <div class="switch-row"><span>About &amp; Heritage Section</span><input type="checkbox" id="chk-sec-about" checked /></div>
+          <div class="switch-row"><span>All Brands / Products Showcase</span><input type="checkbox" id="chk-sec-collection" checked /></div>
+          <div class="switch-row"><span>Photo Gallery Section</span><input type="checkbox" id="chk-sec-gallery" checked /></div>
+          <div class="switch-row"><span>Why Choose Us Section</span><input type="checkbox" id="chk-sec-why" checked /></div>
+        </div>
+      </div>
+
+      <!-- TAB 4: ALL BRANDS / PRODUCT CATALOGUE MANAGER -->
+      <div id="tab-products" class="admin-panel-view">
+        <div class="admin-card">
+          <h3>Add New Wine / Spirit Brand Card</h3>
+          <div class="grid-2">
+            <div class="form-group"><label>Brand / Bottle Name</label><input type="text" id="new-prod-name" class="admin-input" placeholder="e.g. Macallan 18 Year Double Cask" /></div>
+            <div class="form-group"><label>Origin / Category</label><input type="text" id="new-prod-origin" class="admin-input" placeholder="e.g. Speyside Single Malt • Scotland" /></div>
+          </div>
+          <div class="grid-2">
+            <div class="form-group"><label>Availability Tag</label><input type="text" id="new-prod-badge" class="admin-input" value="In Stock • 24H" /></div>
+            <div class="form-group"><label>Bottle Size / Notes</label><input type="text" id="new-prod-meta" class="admin-input" placeholder="750ml • All Variants Available" /></div>
+          </div>
+          <div class="form-group"><label>Tasting &amp; Brand Description</label><textarea id="new-prod-desc" class="admin-textarea" placeholder="Rich oak, dried fruit, and warm spice..."></textarea></div>
+          <div class="form-group">
+            <label>Bottle Photo (Upload from Phone or Paste URL)</label>
+            <input type="text" id="new-prod-img" class="admin-input" placeholder="https://..." />
+            <div class="upload-box">
+              <input type="file" accept="image/*" onchange="handleDirectImageUpload(event, 'new-prod-img', 'prev-new-prod', 720)" />
+              <img id="prev-new-prod" class="preview-thumb" style="display:none;" alt="New Product Preview" />
+            </div>
+          </div>
+          <button type="button" onclick="addProductItem()" class="btn-luxury" style="width:100%;">+ Add Brand to Showcase</button>
+        </div>
+
+        <div class="admin-card">
+          <h3>Current Brands on Website</h3>
+          <div id="admin-products-list"></div>
+        </div>
+      </div>
+
+      <!-- TAB 5: GALLERY MANAGER -->
+      <div id="tab-gallery" class="admin-panel-view">
+        <div class="admin-card">
+          <h3>Add Boutique Photo to Gallery</h3>
+          <div class="form-group"><label>Photo Caption / Title</label><input type="text" id="new-gal-caption" class="admin-input" placeholder="e.g. Rare Single Malt Vault" /></div>
+          <div class="form-group">
+            <label>Select Photo from Phone or Paste URL</label>
+            <input type="text" id="new-gal-img" class="admin-input" />
+            <div class="upload-box">
+              <input type="file" accept="image/*" onchange="handleDirectImageUpload(event, 'new-gal-img', 'prev-new-gal', 900)" />
+              <img id="prev-new-gal" class="preview-thumb" style="display:none;" alt="Gallery Preview" />
+            </div>
+          </div>
+          <button type="button" onclick="addGalleryItem()" class="btn-luxury" style="width:100%;">+ Add Photo to Gallery</button>
+        </div>
+
+        <div class="admin-card">
+          <h3>Manage Gallery Photos</h3>
+          <div id="admin-gallery-list"></div>
+        </div>
+      </div>
+
+      <!-- TAB 6: PHONE, WHATSAPP, GMAIL, HOURS & GOOGLE MAP -->
+      <div id="tab-contact" class="admin-panel-view">
+        <div class="admin-card">
+          <h3>Direct Phone, WhatsApp, Gmail &amp; 24-Hour Schedule</h3>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Call Phone Number (with Country Code)</label>
+              <input type="text" id="inp-phone" class="admin-input" placeholder="+918607518160" />
+            </div>
+            <div class="form-group">
+              <label>WhatsApp Number (Digits with Country Code)</label>
+              <input type="text" id="inp-whatsapp" class="admin-input" placeholder="918607518160" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Pre-filled WhatsApp Greeting Message</label>
+            <input type="text" id="inp-wa-msg" class="admin-input" />
+          </div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Official Gmail / Concierge Email</label>
+              <input type="email" id="inp-email" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label>Opening Hours Text</label>
+              <input type="text" id="inp-hours" class="admin-input" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Full Boutique Address</label>
+            <input type="text" id="inp-address" class="admin-input" />
+          </div>
+          <div class="form-group">
+            <label>Google Maps Embed URL (src link)</label>
+            <input type="text" id="inp-map-url" class="admin-input" />
+          </div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Floating Buttons Visibility</label>
+              <select id="inp-float-vis" class="admin-select">
+                <option value="true">Visible on All Pages</option>
+                <option value="false">Hidden</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Floating Buttons Position</label>
+              <select id="inp-float-pos" class="admin-select">
+                <option value="right">Bottom Right</option>
+                <option value="left">Bottom Left</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 7: COMPLETE GOOGLE SEO & SEARCH RANKING CENTER -->
+      <div id="tab-seo" class="admin-panel-view">
+        <div class="admin-card">
+          <h3>Google Search Engine Optimization &amp; Meta Tags</h3>
+          <p style="font-size:0.82rem;color:#B8AFA6;margin-bottom:14px;">Control your Google Search Title, Meta Description, Keywords, Canonical URL, Open Graph social preview, and Google Search Console verification tag directly without editing code.</p>
+          <div class="form-group">
+            <label>SEO Page Title (Appears in Google Search Results)</label>
+            <input type="text" id="inp-seo-title" class="admin-input" />
+          </div>
+          <div class="form-group">
+            <label>Meta Description (150–160 characters recommended)</label>
+            <textarea id="inp-seo-desc" class="admin-textarea"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Target SEO Keywords (Comma separated)</label>
+            <input type="text" id="inp-seo-keywords" class="admin-input" />
+          </div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Google Search Console Verification Code</label>
+              <input type="text" id="inp-seo-gsc" class="admin-input" placeholder="Paste content code from Google Search Console" />
+            </div>
+            <div class="form-group">
+              <label>Canonical Website URL</label>
+              <input type="url" id="inp-seo-canonical" class="admin-input" placeholder="https://your-domain.netlify.app" />
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Search Robots Directive</label>
+              <select id="inp-seo-robots" class="admin-select">
+                <option value="index, follow, max-image-preview:large">Index &amp; Follow (Recommended for Google)</option>
+                <option value="noindex, nofollow">NoIndex (Hide from Search)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Open Graph Social Share Image URL</label>
+              <input type="text" id="inp-seo-ogimg" class="admin-input" />
+            </div>
+          </div>
+
+          <!-- Live Google Snippet Preview -->
+          <div style="background:#FFFFFF;color:#202124;padding:16px;border-radius:8px;margin-top:14px;">
+            <div style="font-size:0.75rem;color:#4D5156;" id="seo-prev-url">https://vintora.netlify.app</div>
+            <div style="font-size:1.12rem;color:#1A0DAB;font-weight:500;margin:3px 0;" id="seo-prev-title">VINTORA — Premium Wine &amp; Spirits | Open 24 Hours</div>
+            <div style="font-size:0.85rem;color:#4D5156;" id="seo-prev-desc">Curated international fine wines, rare single malts, champagne, and all major liquor brands. Open 24 Hours.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 8: LUXURY THEME & COLOR CUSTOMIZER -->
+      <div id="tab-theme" class="admin-panel-view">
+        <div class="admin-card">
+          <h3>Theme Presets &amp; Custom Colors</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;">
+            <button type="button" onclick="applyThemePreset('burgundy')" class="btn-outline" style="padding:10px 16px;">Noir Burgundy &amp; Gold</button>
+            <button type="button" onclick="applyThemePreset('emerald')" class="btn-outline" style="padding:10px 16px;">Royal Cellar Emerald</button>
+            <button type="button" onclick="applyThemePreset('obsidian')" class="btn-outline" style="padding:10px 16px;">Pure Obsidian &amp; Champagne</button>
+          </div>
+          <div class="grid-2">
+            <div class="form-group"><label>Background Color</label><input type="color" id="inp-col-bg" class="admin-input" style="height:48px;" /></div>
+            <div class="form-group"><label>Champagne Gold Accent</label><input type="color" id="inp-col-gold" class="admin-input" style="height:48px;" /></div>
+            <div class="form-group"><label>Deep Burgundy Accent</label><input type="color" id="inp-col-burgundy" class="admin-input" style="height:48px;" /></div>
+            <div class="form-group"><label>Primary Text Color</label><input type="color" id="inp-col-text" class="admin-input" style="height:48px;" /></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 9: LEGAL PAGES EDITOR -->
+      <div id="tab-legal" class="admin-panel-view">
+        <div class="admin-card">
+          <h3>Editable Legal &amp; Compliance Notices</h3>
+          <div class="form-group"><label>Responsible Drinking Policy</label><textarea id="inp-leg-responsible" class="admin-textarea"></textarea></div>
+          <div class="form-group"><label>Legal Drinking Age Notice</label><textarea id="inp-leg-age" class="admin-textarea"></textarea></div>
+          <div class="form-group"><label>Privacy Policy</label><textarea id="inp-leg-privacy" class="admin-textarea"></textarea></div>
+          <div class="form-group"><label>Terms &amp; Conditions</label><textarea id="inp-leg-terms" class="admin-textarea"></textarea></div>
+          <div class="form-group"><label>Legal Disclaimer</label><textarea id="inp-leg-disclaimer" class="admin-textarea"></textarea></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Fixed Bottom Master Save Bar -->
+    <div class="admin-save-bar">
+      <button type="button" id="btn-save-all-changes" class="btn-save-master">Save &amp; Publish All Changes Live</button>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       FIREBASE MODULE (AUTH + FIRESTORE ONLY — ZERO STORAGE ERRORS)
+       ========================================================= -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+    import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAGEHWdQjMwCXrrqUdtZqeLqhfi7RFKo-g",
+      authDomain: "wineshpi-w.firebaseapp.com",
+      databaseURL: "https://wineshpi-w-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "wineshpi-w",
+      storageBucket: "wineshpi-w.firebasestorage.app",
+      messagingSenderId: "401861762511",
+      appId: "1:401861762511:web:420a76f640022b7291c6ba",
+      measurementId: "G-582T6YN5VS"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const AUTHORIZED_OWNER_EMAIL = "surajmeena.86075@gmail.com";
+    const CONFIG_DOC_REF = doc(db, "site_config", "master");
+
+    // Default Complete State
+    const DEFAULT_STATE = {
+      brandName: "VINTORA",
+      brandTagline: "PREMIUM WINE & SPIRITS",
+      logoUrl: "",
+      faviconUrl: "",
+      headerBadge: "Open 24 Hours",
+      headerSticky: "true",
+      nav1: "Heritage",
+      nav2: "All Brands",
+      nav3: "Cellar Gallery",
+      nav4: "Visit & Concierge",
+      heroEyebrow: "OPEN 24 HOURS • ALL INTERNATIONAL & DOMESTIC BRANDS",
+      heroHeadline: "Curated Rare Vintages & Prestigious Spirits",
+      heroSub: "Experience an extraordinary sanctuary of fine wines, aged single malts, French champagnes, and every celebrated spirit brand — welcoming connoisseurs 24 hours a day.",
+      heroCta1: "Explore All Brands",
+      heroCta2: "Concierge & Location",
+      heroImg: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1800&q=85",
+      aboutTitle: "Where Timeless Heritage Meets Modern Luxury",
+      aboutP1: "VINTORA was conceived as an architectural haven for discerning collectors and spirited celebrations. Every bottle in our climate-controlled gallery is sourced directly through authorized channels to guarantee impeccable provenance.",
+      aboutP2: "Whether you seek a celebrated everyday label, a celebratory champagne, or a rare cask-strength single malt at any hour of the day or night, our boutique remains open 24 hours with every major brand under one roof.",
+      aboutImg: "https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=1100&q=85",
+      secAbout: true,
+      secCollection: true,
+      secGallery: true,
+      secWhy: true,
+      phone: "+918607518160",
+      whatsapp: "918607518160",
+      waMsg: "Hello VINTORA Concierge, I would like to inquire about brand availability.",
+      email: "Surajmeena.86075@gmail.com",
+      hours: "Open 24 Hours — Monday to Sunday",
+      address: "VINTORA Flagship Wine & Spirits Boutique, Main Boulevard",
+      mapUrl: "https://www.google.com/maps?q=Hisar,Haryana,India&output=embed",
+      floatVis: "true",
+      floatPos: "right",
+      footerDesc: "A sanctuary of fine wines, rare single malts, and all celebrated spirits. Open 24 hours for discerning patrons.",
+      copyright: "© 2026 VINTORA Premium Wine & Spirits. All Rights Reserved. Please drink responsibly.",
+      socialIg: "https://instagram.com",
+      socialFb: "https://facebook.com",
+      seoTitle: "VINTORA — Premium Wine & Spirits | Open 24 Hours | All Brands",
+      seoDesc: "VINTORA Premium Wine & Spirits. Curated international fine wines, rare single malts, champagne, and all major liquor brands. Open 24 Hours.",
+      seoKeywords: "VINTORA, luxury wine shop, 24 hour wine shop, single malt whisky, champagne, all brands liquor store",
+      seoGsc: "",
+      seoCanonical: window.location.origin,
+      seoRobots: "index, follow, max-image-preview:large",
+      seoOgImg: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1400&q=85",
+      colBg: "#0B090A",
+      colGold: "#D4AF37",
+      colBurgundy: "#4A0E1C",
+      colText: "#F8F5F0",
+      products: [
+        {
+          name: "Single Malt Scotch Whisky Collection",
+          origin: "Highlands & Speyside • Scotland",
+          badge: "All Brands • 24H",
+          meta: "12YO, 15YO, 18YO & Rare Casks",
+          desc: "Complete portfolio of celebrated single malts matured in sherry and bourbon oak casks.",
+          img: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=85"
+        },
+        {
+          name: "Grand Cru & Estate Reserve Wines",
+          origin: "Bordeaux, Napa & Tuscany",
+          badge: "Climate Vault",
+          meta: "Cabernet, Pinot Noir & Merlot",
+          desc: "Expressive old-world and new-world vintages preserved in temperature-calibrated cellars.",
+          img: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=85"
+        },
+        {
+          name: "Prestige Cuvée Champagne & Sparkling",
+          origin: "Reims & Épernay • France",
+          badge: "Chilled Ready",
+          meta: "Brut, Rosé & Vintage Cuvées",
+          desc: "Fine-beaded French champagnes and celebratory sparkling labels ready around the clock.",
+          img: "https://images.unsplash.com/photo-1594372365401-3b5ff14eaaed?auto=format&fit=crop&w=800&q=85"
+        },
+        {
+          name: "Artisanal Gin, Vodka, Rum & Tequila",
+          origin: "International & Domestic Portfolio",
+          badge: "All Labels Stocked",
+          meta: "Full Range Available",
+          desc: "Small-batch botanical gins, ultra-pure vodkas, aged rums, and 100% blue agave tequilas.",
+          img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=85"
+        }
+      ],
+      gallery: [
+        {
+          caption: "The Flagship Tasting & Reserve Gallery",
+          img: "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          caption: "Temperature-Calibrated Wine Vault",
+          img: "https://images.unsplash.com/photo-1504279577054-acfeccf8fc52?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          caption: "Rare Single Malt & Cognac Showcase",
+          img: "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&w=900&q=85"
+        }
+      ],
+      legal: {
+        responsible: "VINTORA advocates responsible enjoyment of fine wines and spirits. Never drink and drive. Alcohol consumption is injurious to health.",
+        age: "In accordance with applicable Indian State Excise regulations, alcohol products are strictly meant only for individuals of legal drinking age in their respective jurisdiction.",
+        privacy: "We respect visitor privacy. Contact details shared via phone, WhatsApp, or email are used strictly to respond to boutique inquiries and are never sold to third parties.",
+        terms: "This website serves as an informational showcase of our boutique, operating hours, and brand portfolio in compliance with applicable laws.",
+        disclaimer: "Product availability is subject to in-store stock and statutory excise regulations. Please verify compliance with local state rules."
+      }
+    };
+
+    let siteState = structuredClone(DEFAULT_STATE);
+
+    // Toast Utility
+    function showToast(msg) {
+      const el = document.getElementById("toast-banner");
+      el.textContent = msg;
+      el.classList.add("show");
+      setTimeout(() => el.classList.remove("show"), 3400);
+    }
+
+    // Apply State to Public DOM + SEO Metadata
+    function renderPublicSite(data) {
+      siteState = { ...structuredClone(DEFAULT_STATE), ...data };
+
+      // Theme Colors
+      document.documentElement.style.setProperty("--bg-primary", siteState.colBg);
+      document.documentElement.style.setProperty("--accent-gold", siteState.colGold);
+      document.documentElement.style.setProperty("--btn-bg", siteState.colGold);
+      document.documentElement.style.setProperty("--accent-burgundy", siteState.colBurgundy);
+      document.documentElement.style.setProperty("--text-primary", siteState.colText);
+
+      // Header & Brand
+      document.getElementById("pub-brand-name").textContent = siteState.brandName;
+      document.getElementById("pub-brand-tagline").textContent = siteState.brandTagline;
+      document.getElementById("pub-footer-brand-name").textContent = siteState.brandName;
+      document.getElementById("pub-footer-brand-tag").textContent = siteState.brandTagline;
+
+      const headerLogo = document.getElementById("pub-header-logo");
+      const headerSvg = document.getElementById("pub-header-svg");
+      const footerLogo = document.getElementById("pub-footer-logo");
+      if (siteState.logoUrl && siteState.logoUrl.trim()) {
+        headerLogo.src = siteState.logoUrl;
+        headerLogo.style.display = "block";
+        headerSvg.style.display = "none";
+        footerLogo.src = siteState.logoUrl;
+        footerLogo.style.display = "block";
+      } else {
+        headerLogo.style.display = "none";
+        headerSvg.style.display = "block";
+        footerLogo.style.display = "none";
+      }
+
+      if (siteState.faviconUrl && siteState.faviconUrl.trim()) {
+        document.getElementById("dynamic-favicon").href = siteState.faviconUrl;
+      }
+
+      const headerEl = document.getElementById("site-header");
+      headerEl.classList.toggle("not-sticky", siteState.headerSticky === "false");
+      document.getElementById("pub-header-hours-badge").textContent = siteState.headerBadge;
+      document.getElementById("mob-hours-badge").textContent = siteState.headerBadge;
+      document.getElementById("nav-label-about").textContent = siteState.nav1;
+      document.getElementById("nav-label-collection").textContent = siteState.nav2;
+      document.getElementById("nav-label-gallery").textContent = siteState.nav3;
+      document.getElementById("nav-label-contact").textContent = siteState.nav4;
+
+      // Hero
+      document.getElementById("pub-hero-eyebrow").textContent = siteState.heroEyebrow;
+      document.getElementById("pub-hero-headline").textContent = siteState.heroHeadline;
+      document.getElementById("pub-hero-subheadline").textContent = siteState.heroSub;
+      document.getElementById("pub-hero-cta1").textContent = siteState.heroCta1;
+      document.getElementById("pub-hero-cta2").textContent = siteState.heroCta2;
+      if (siteState.heroImg) document.getElementById("pub-hero-img").src = siteState.heroImg;
+
+      // About
+      document.getElementById("about").style.display = siteState.secAbout ? "block" : "none";
+      document.getElementById("pub-about-title").textContent = siteState.aboutTitle;
+      document.getElementById("pub-about-p1").textContent = siteState.aboutP1;
+      document.getElementById("pub-about-p2").textContent = siteState.aboutP2;
+      if (siteState.aboutImg) document.getElementById("pub-about-img").src = siteState.aboutImg;
+
+      // Section Toggles
+      document.getElementById("collection").style.display = siteState.secCollection ? "block" : "none";
+      document.getElementById("gallery").style.display = siteState.secGallery ? "block" : "none";
+      document.getElementById("why-us").style.display = siteState.secWhy ? "block" : "none";
+
+      // Products Grid
+      const prodGrid = document.getElementById("pub-products-grid");
+      prodGrid.innerHTML = (siteState.products || []).map(p => `
+        <article class="product-card">
+          <div class="product-img-box">
+            <span class="product-badge">${escapeHtml(p.badge || "Available 24H")}</span>
+            <img src="${escapeHtml(p.img)}" alt="${escapeHtml(p.name)}" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-origin">${escapeHtml(p.origin)}</div>
+            <h3 class="product-title">${escapeHtml(p.name)}</h3>
+            <p class="product-desc">${escapeHtml(p.desc)}</p>
+            <div class="product-meta">
+              <span>${escapeHtml(p.meta)}</span>
+              <span class="gold-text">Inquire</span>
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      // Gallery Grid
+      const galGrid = document.getElementById("pub-gallery-grid");
+      galGrid.innerHTML = (siteState.gallery || []).map(g => `
+        <figure class="gallery-item">
+          <img src="${escapeHtml(g.img)}" alt="${escapeHtml(g.caption)}" loading="lazy" />
+          <figcaption class="gallery-caption">${escapeHtml(g.caption)}</figcaption>
+        </figure>
+      `).join("");
+
+      // Contact, WhatsApp, Call, Gmail, Map
+      const cleanPhone = siteState.phone.replace(/\s+/g, "");
+      const cleanWa = siteState.whatsapp.replace(/\D/g, "");
+      const waHref = `https://wa.me/${cleanWa}?text=${encodeURIComponent(siteState.waMsg || "")}`;
+
+      document.getElementById("pub-contact-address").textContent = siteState.address;
+      document.getElementById("pub-contact-hours").textContent = siteState.hours;
+      const phoneLink = document.getElementById("pub-contact-phone-link");
+      phoneLink.textContent = siteState.phone;
+      phoneLink.href = `tel:${cleanPhone}`;
+
+      const emailLink = document.getElementById("pub-contact-email-link");
+      emailLink.textContent = siteState.email;
+      emailLink.href = `mailto:${siteState.email}`;
+
+      document.getElementById("pub-btn-whatsapp-card").href = waHref;
+      document.getElementById("pub-btn-call-card").href = `tel:${cleanPhone}`;
+      document.getElementById("float-whatsapp-link").href = waHref;
+      document.getElementById("float-call-link").href = `tel:${cleanPhone}`;
+
+      const floatWrap = document.getElementById("floating-concierge");
+      floatWrap.style.display = siteState.floatVis === "false" ? "none" : "flex";
+      floatWrap.classList.toggle("left", siteState.floatPos === "left");
+
+      if (siteState.mapUrl) document.getElementById("pub-google-map").src = siteState.mapUrl;
+
+      // Footer & Socials
+      document.getElementById("pub-footer-desc").textContent = siteState.footerDesc;
+      document.getElementById("pub-copyright").textContent = siteState.copyright;
+      const fPhone = document.getElementById("pub-footer-phone");
+      fPhone.textContent = siteState.phone;
+      fPhone.href = `tel:${cleanPhone}`;
+      const fEmail = document.getElementById("pub-footer-email");
+      fEmail.textContent = siteState.email;
+      fEmail.href = `mailto:${siteState.email}`;
+      document.getElementById("pub-social-ig").href = siteState.socialIg || "#";
+      document.getElementById("pub-social-fb").href = siteState.socialFb || "#";
+
+      // SEO & Search Console Tags
+      document.title = siteState.seoTitle;
+      document.getElementById("meta-description").setAttribute("content", siteState.seoDesc);
+      document.getElementById("meta-keywords").setAttribute("content", siteState.seoKeywords);
+      document.getElementById("meta-robots").setAttribute("content", siteState.seoRobots);
+      document.getElementById("meta-google-verification").setAttribute("content", siteState.seoGsc || "");
+      document.getElementById("meta-canonical").setAttribute("href", siteState.seoCanonical || window.location.href);
+      document.getElementById("og-title").setAttribute("content", siteState.seoTitle);
+      document.getElementById("og-description").setAttribute("content", siteState.seoDesc);
+      document.getElementById("og-image").setAttribute("content", siteState.seoOgImg || siteState.heroImg);
+
+      // Update JSON-LD Structured Data
+      const schemaEl = document.getElementById("ld-json-schema");
+      if (schemaEl) {
+        schemaEl.textContent = JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LiquorStore",
+          "name": siteState.brandName,
+          "description": siteState.seoDesc,
+          "telephone": siteState.phone,
+          "email": siteState.email,
+          "address": siteState.address,
+          "openingHours": "Mo-Su 00:00-23:59",
+          "url": siteState.seoCanonical || window.location.href
+        });
+      }
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    // Real-Time Firestore Listener (Syncs Instantly Across All Devices)
+    onSnapshot(CONFIG_DOC_REF, (snap) => {
+      if (snap.exists()) {
+        renderPublicSite(snap.data());
+      } else {
+        renderPublicSite(DEFAULT_STATE);
+      }
+    }, (err) => {
+      console.warn("Firestore read fallback:", err.message);
+      renderPublicSite(DEFAULT_STATE);
+    });
+
+    // Populate Admin Form Inputs from Current State
+    function populateAdminForm() {
+      document.getElementById("inp-brand-name").value = siteState.brandName;
+      document.getElementById("inp-brand-tagline").value = siteState.brandTagline;
+      document.getElementById("inp-logo-url").value = siteState.logoUrl || "";
+      document.getElementById("inp-favicon-url").value = siteState.faviconUrl || "";
+
+      if (siteState.logoUrl) {
+        const pl = document.getElementById("prev-logo");
+        pl.src = siteState.logoUrl; pl.style.display = "block";
+      }
+      if (siteState.faviconUrl) {
+        const pf = document.getElementById("prev-favicon");
+        pf.src = siteState.faviconUrl; pf.style.display = "block";
+      }
+
+      document.getElementById("inp-header-badge").value = siteState.headerBadge;
+      document.getElementById("inp-header-sticky").value = siteState.headerSticky;
+      document.getElementById("inp-nav-1").value = siteState.nav1;
+      document.getElementById("inp-nav-2").value = siteState.nav2;
+      document.getElementById("inp-nav-3").value = siteState.nav3;
+      document.getElementById("inp-nav-4").value = siteState.nav4;
+      document.getElementById("inp-footer-desc").value = siteState.footerDesc;
+      document.getElementById("inp-copyright").value = siteState.copyright;
+      document.getElementById("inp-social-ig").value = siteState.socialIg;
+      document.getElementById("inp-social-fb").value = siteState.socialFb;
+
+      document.getElementById("inp-hero-eyebrow").value = siteState.heroEyebrow;
+      document.getElementById("inp-hero-headline").value = siteState.heroHeadline;
+      document.getElementById("inp-hero-sub").value = siteState.heroSub;
+      document.getElementById("inp-hero-cta1").value = siteState.heroCta1;
+      document.getElementById("inp-hero-cta2").value = siteState.heroCta2;
+      document.getElementById("inp-hero-img").value = siteState.heroImg;
+      document.getElementById("prev-hero").src = siteState.heroImg;
+
+      document.getElementById("inp-about-title").value = siteState.aboutTitle;
+      document.getElementById("inp-about-p1").value = siteState.aboutP1;
+      document.getElementById("inp-about-p2").value = siteState.aboutP2;
+      document.getElementById("inp-about-img").value = siteState.aboutImg;
+      document.getElementById("prev-about").src = siteState.aboutImg;
+
+      document.getElementById("chk-sec-about").checked = !!siteState.secAbout;
+      document.getElementById("chk-sec-collection").checked = !!siteState.secCollection;
+      document.getElementById("chk-sec-gallery").checked = !!siteState.secGallery;
+      document.getElementById("chk-sec-why").checked = !!siteState.secWhy;
+
+      document.getElementById("inp-phone").value = siteState.phone;
+      document.getElementById("inp-whatsapp").value = siteState.whatsapp;
+      document.getElementById("inp-wa-msg").value = siteState.waMsg;
+      document.getElementById("inp-email").value = siteState.email;
+      document.getElementById("inp-hours").value = siteState.hours;
+      document.getElementById("inp-address").value = siteState.address;
+      document.getElementById("inp-map-url").value = siteState.mapUrl;
+      document.getElementById("inp-float-vis").value = siteState.floatVis;
+      document.getElementById("inp-float-pos").value = siteState.floatPos;
+
+      document.getElementById("inp-seo-title").value = siteState.seoTitle;
+      document.getElementById("inp-seo-desc").value = siteState.seoDesc;
+      document.getElementById("inp-seo-keywords").value = siteState.seoKeywords;
+      document.getElementById("inp-seo-gsc").value = siteState.seoGsc || "";
+      document.getElementById("inp-seo-canonical").value = siteState.seoCanonical || "";
+      document.getElementById("inp-seo-robots").value = siteState.seoRobots;
+      document.getElementById("inp-seo-ogimg").value = siteState.seoOgImg || "";
+      updateSeoPreviewBox();
+
+      document.getElementById("inp-col-bg").value = siteState.colBg;
+      document.getElementById("inp-col-gold").value = siteState.colGold;
+      document.getElementById("inp-col-burgundy").value = siteState.colBurgundy;
+      document.getElementById("inp-col-text").value = siteState.colText;
+
+      document.getElementById("inp-leg-responsible").value = siteState.legal?.responsible || "";
+      document.getElementById("inp-leg-age").value = siteState.legal?.age || "";
+      document.getElementById("inp-leg-privacy").value = siteState.legal?.privacy || "";
+      document.getElementById("inp-leg-terms").value = siteState.legal?.terms || "";
+      document.getElementById("inp-leg-disclaimer").value = siteState.legal?.disclaimer || "";
+
+      renderAdminLists();
+    }
+
+    function renderAdminLists() {
+      const pList = document.getElementById("admin-products-list");
+      pList.innerHTML = (siteState.products || []).map((p, idx) => `
+        <div style="display:flex;gap:12px;align-items:center;padding:12px;border:1px solid rgba(212,175,55,0.2);border-radius:8px;margin-bottom:10px;background:#0B090A;">
+          <img src="${escapeHtml(p.img)}" style="width:58px;height:58px;object-fit:cover;border-radius:6px;" alt="" />
+          <div style="flex:1;min-width:0;">
+            <div style="font-weight:600;color:#F8F5F0;font-size:0.92rem;">${escapeHtml(p.name)}</div>
+            <div style="font-size:0.78rem;color:#B8AFA6;">${escapeHtml(p.origin)}</div>
+          </div>
+          <button type="button" onclick="removeProductItem(${idx})" style="padding:8px 12px;background:#4A0E1C;color:#fff;border-radius:6px;font-size:0.76rem;">Delete</button>
+        </div>
+      `).join("");
+
+      const gList = document.getElementById("admin-gallery-list");
+      gList.innerHTML = (siteState.gallery || []).map((g, idx) => `
+        <div style="display:flex;gap:12px;align-items:center;padding:12px;border:1px solid rgba(212,175,55,0.2);border-radius:8px;margin-bottom:10px;background:#0B090A;">
+          <img src="${escapeHtml(g.img)}" style="width:68px;height:52px;object-fit:cover;border-radius:6px;" alt="" />
+          <div style="flex:1;font-size:0.9rem;">${escapeHtml(g.caption)}</div>
+          <button type="button" onclick="removeGalleryItem(${idx})" style="padding:8px 12px;background:#4A0E1C;color:#fff;border-radius:6px;font-size:0.76rem;">Delete</button>
+        </div>
+      `).join("");
+    }
+
+    // Client-Side Smart Image Compressor -> Base64 DataURL (Zero Storage Bucket Required!)
+    window.handleDirectImageUpload = function(event, targetInputId, previewImgId, maxWidth = 1000) {
+      const file = event.target.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement("canvas");
+          let w = img.width;
+          let h = img.height;
+          if (w > maxWidth) {
+            h = Math.round((h * maxWidth) / w);
+            w = maxWidth;
+          }
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, w, h);
+          const compressedDataUrl = canvas.toDataURL("image/webp", 0.78);
+          document.getElementById(targetInputId).value = compressedDataUrl;
+          const prev = document.getElementById(previewImgId);
+          if (prev) {
+            prev.src = compressedDataUrl;
+            prev.style.display = "block";
+          }
+          showToast("Photo optimized & ready! Click Save to publish.");
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    };
+
+    window.addProductItem = function() {
+      const name = document.getElementById("new-prod-name").value.trim();
+      const origin = document.getElementById("new-prod-origin").value.trim();
+      const badge = document.getElementById("new-prod-badge").value.trim();
+      const meta = document.getElementById("new-prod-meta").value.trim();
+      const desc = document.getElementById("new-prod-desc").value.trim();
+      const img = document.getElementById("new-prod-img").value.trim() || "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=85";
+      if (!name) return showToast("Please enter a brand name.");
+      siteState.products.unshift({ name, origin, badge, meta, desc, img });
+      document.getElementById("new-prod-name").value = "";
+      document.getElementById("new-prod-desc").value = "";
+      document.getElementById("new-prod-img").value = "";
+      document.getElementById("prev-new-prod").style.display = "none";
+      renderAdminLists();
+      showToast("Brand added to list! Tap Save & Publish below.");
+    };
+
+    window.removeProductItem = function(idx) {
+      siteState.products.splice(idx, 1);
+      renderAdminLists();
+      showToast("Brand removed. Tap Save & Publish to apply.");
+    };
+
+    window.addGalleryItem = function() {
+      const caption = document.getElementById("new-gal-caption").value.trim() || "VINTORA Cellar";
+      const img = document.getElementById("new-gal-img").value.trim();
+      if (!img) return showToast("Please select a photo or paste an image URL.");
+      siteState.gallery.unshift({ caption, img });
+      document.getElementById("new-gal-caption").value = "";
+      document.getElementById("new-gal-img").value = "";
+      document.getElementById("prev-new-gal").style.display = "none";
+      renderAdminLists();
+      showToast("Photo added! Tap Save & Publish below.");
+    };
+
+    window.removeGalleryItem = function(idx) {
+      siteState.gallery.splice(idx, 1);
+      renderAdminLists();
+      showToast("Photo removed. Tap Save & Publish to apply.");
+    };
+
+    window.applyThemePreset = function(preset) {
+      if (preset === "burgundy") {
+        document.getElementById("inp-col-bg").value = "#0B090A";
+        document.getElementById("inp-col-gold").value = "#D4AF37";
+        document.getElementById("inp-col-burgundy").value = "#4A0E1C";
+        document.getElementById("inp-col-text").value = "#F8F5F0";
+      } else if (preset === "emerald") {
+        document.getElementById("inp-col-bg").value = "#070E0B";
+        document.getElementById("inp-col-gold").value = "#D8B863";
+        document.getElementById("inp-col-burgundy").value = "#0F3D2E";
+        document.getElementById("inp-col-text").value = "#F5F7F5";
+      } else if (preset === "obsidian") {
+        document.getElementById("inp-col-bg").value = "#050505";
+        document.getElementById("inp-col-gold").value = "#E5C158";
+        document.getElementById("inp-col-burgundy").value = "#1E1E22";
+        document.getElementById("inp-col-text").value = "#FFFFFF";
+      }
+      showToast("Theme preset loaded! Click Save & Publish.");
+    };
+
+    function updateSeoPreviewBox() {
+      document.getElementById("seo-prev-title").textContent = document.getElementById("inp-seo-title").value;
+      document.getElementById("seo-prev-desc").textContent = document.getElementById("inp-seo-desc").value;
+      document.getElementById("seo-prev-url").textContent = document.getElementById("inp-seo-canonical").value || window.location.origin;
+    }
+    ["inp-seo-title", "inp-seo-desc", "inp-seo-canonical"].forEach(id => {
+      document.getElementById(id).addEventListener("input", updateSeoPreviewBox);
+    });
+
+    // Save Master State to Firestore
+    document.getElementById("btn-save-all-changes").addEventListener("click", async () => {
+      const btn = document.getElementById("btn-save-all-changes");
+      btn.disabled = true;
+      btn.textContent = "Publishing Live...";
+
+      const updatedPayload = {
+        ...siteState,
+        brandName: document.getElementById("inp-brand-name").value.trim() || "VINTORA",
+        brandTagline: document.getElementById("inp-brand-tagline").value.trim(),
+        logoUrl: document.getElementById("inp-logo-url").value.trim(),
+        faviconUrl: document.getElementById("inp-favicon-url").value.trim(),
+        headerBadge: document.getElementById("inp-header-badge").value.trim(),
+        headerSticky: document.getElementById("inp-header-sticky").value,
+        nav1: document.getElementById("inp-nav-1").value.trim(),
+        nav2: document.getElementById("inp-nav-2").value.trim(),
+        nav3: document.getElementById("inp-nav-3").value.trim(),
+        nav4: document.getElementById("inp-nav-4").value.trim(),
+        footerDesc: document.getElementById("inp-footer-desc").value.trim(),
+        copyright: document.getElementById("inp-copyright").value.trim(),
+        socialIg: document.getElementById("inp-social-ig").value.trim(),
+        socialFb: document.getElementById("inp-social-fb").value.trim(),
+        heroEyebrow: document.getElementById("inp-hero-eyebrow").value.trim(),
+        heroHeadline: document.getElementById("inp-hero-headline").value.trim(),
+        heroSub: document.getElementById("inp-hero-sub").value.trim(),
+        heroCta1: document.getElementById("inp-hero-cta1").value.trim(),
+        heroCta2: document.getElementById("inp-hero-cta2").value.trim(),
+        heroImg: document.getElementById("inp-hero-img").value.trim(),
+        aboutTitle: document.getElementById("inp-about-title").value.trim(),
+        aboutP1: document.getElementById("inp-about-p1").value.trim(),
+        aboutP2: document.getElementById("inp-about-p2").value.trim(),
+        aboutImg: document.getElementById("inp-about-img").value.trim(),
+        secAbout: document.getElementById("chk-sec-about").checked,
+        secCollection: document.getElementById("chk-sec-collection").checked,
+        secGallery: document.getElementById("chk-sec-gallery").checked,
+        secWhy: document.getElementById("chk-sec-why").checked,
+        phone: document.getElementById("inp-phone").value.trim(),
+        whatsapp: document.getElementById("inp-whatsapp").value.trim(),
+        waMsg: document.getElementById("inp-wa-msg").value.trim(),
+        email: document.getElementById("inp-email").value.trim(),
+        hours: document.getElementById("inp-hours").value.trim(),
+        address: document.getElementById("inp-address").value.trim(),
+        mapUrl: document.getElementById("inp-map-url").value.trim(),
+        floatVis: document.getElementById("inp-float-vis").value,
+        floatPos: document.getElementById("inp-float-pos").value,
+        seoTitle: document.getElementById("inp-seo-title").value.trim(),
+        seoDesc: document.getElementById("inp-seo-desc").value.trim(),
+        seoKeywords: document.getElementById("inp-seo-keywords").value.trim(),
+        seoGsc: document.getElementById("inp-seo-gsc").value.trim(),
+        seoCanonical: document.getElementById("inp-seo-canonical").value.trim(),
+        seoRobots: document.getElementById("inp-seo-robots").value,
+        seoOgImg: document.getElementById("inp-seo-ogimg").value.trim(),
+        colBg: document.getElementById("inp-col-bg").value,
+        colGold: document.getElementById("inp-col-gold").value,
+        colBurgundy: document.getElementById("inp-col-burgundy").value,
+        colText: document.getElementById("inp-col-text").value,
+        legal: {
+          responsible: document.getElementById("inp-leg-responsible").value,
+          age: document.getElementById("inp-leg-age").value,
+          privacy: document.getElementById("inp-leg-privacy").value,
+          terms: document.getElementById("inp-leg-terms").value,
+          disclaimer: document.getElementById("inp-leg-disclaimer").value
+        },
+        updatedAt: new Date().toISOString()
+      };
+
+      try {
+        await setDoc(CONFIG_DOC_REF, updatedPayload, { merge: true });
+        renderPublicSite(updatedPayload);
+        showToast("All changes saved & published live!");
+      } catch (err) {
+        console.error(err);
+        showToast("Save Error: Check Firestore Rules (" + err.code + ")");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Save & Publish All Changes Live";
+      }
+    });
+
+    // =========================================================
+    // STEALTH OWNER AUTHENTICATION FLOW
+    // =========================================================
+    const authModal = document.getElementById("admin-auth-modal");
+    const adminShell = document.getElementById("admin-dashboard-shell");
+
+    document.getElementById("open-owner-login").addEventListener("click", () => {
+      if (auth.currentUser && auth.currentUser.email?.toLowerCase() === AUTHORIZED_OWNER_EMAIL) {
+        populateAdminForm();
+        adminShell.classList.add("active");
+      } else {
+        authModal.classList.add("open");
+      }
+    });
+
+    document.getElementById("close-auth-modal").addEventListener("click", () => {
+      authModal.classList.remove("open");
+    });
+
+    document.getElementById("owner-login-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("owner-email").value.trim();
+      const pass = document.getElementById("owner-password").value;
+      const errBox = document.getElementById("auth-error-msg");
+      const subBtn = document.getElementById("owner-login-submit");
+
+      errBox.style.display = "none";
+      subBtn.disabled = true;
+      subBtn.textContent = "Verifying...";
+
+      try {
+        const cred = await signInWithEmailAndPassword(auth, email, pass);
+        if (cred.user.email.toLowerCase() !== AUTHORIZED_OWNER_EMAIL) {
+          await signOut(auth);
+          throw new Error("Unauthorized account.");
+        }
+        authModal.classList.remove("open");
+        populateAdminForm();
+        adminShell.classList.add("active");
+        showToast("Welcome back, Owner.");
+      } catch (err) {
+        errBox.textContent = "Access Denied: Invalid credentials or unauthorized email.";
+        errBox.style.display = "block";
+      } finally {
+        subBtn.disabled = false;
+        subBtn.textContent = "Verify & Enter Dashboard";
+      }
+    });
+
+    onAuthStateChanged(auth, (user) => {
+      if (user && user.email?.toLowerCase() === AUTHORIZED_OWNER_EMAIL) {
+        document.getElementById("admin-user-badge").textContent = user.email;
+        if (new URLSearchParams(window.location.search).get("portal") === "owner") {
+          populateAdminForm();
+          adminShell.classList.add("active");
+        }
+      } else {
+        adminShell.classList.remove("active");
+      }
+    });
+
+    document.getElementById("btn-preview-site").addEventListener("click", () => {
+      adminShell.classList.remove("active");
+    });
+
+    document.getElementById("btn-owner-logout").addEventListener("click", async () => {
+      await signOut(auth);
+      adminShell.classList.remove("active");
+      showToast("Logged out securely.");
+    });
+
+    // Admin Tab Switcher
+    document.querySelectorAll(".admin-tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".admin-tab-btn").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".admin-panel-view").forEach(v => v.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    // Mobile Menu Controls
+    const mobDrawer = document.getElementById("mobile-drawer");
+    document.getElementById("open-mobile-menu").addEventListener("click", () => mobDrawer.classList.add("open"));
+    document.getElementById("close-mobile-menu").addEventListener("click", () => mobDrawer.classList.remove("open"));
+    document.querySelectorAll(".mobile-nav-link").forEach(l => l.addEventListener("click", () => mobDrawer.classList.remove("open")));
+
+    // Legal Modal Controls
+    window.openLegalModal = function(key) {
+      const titles = {
+        responsible: "Responsible Drinking Policy",
+        age: "Legal Drinking Age Notice",
+        privacy: "Privacy Policy",
+        terms: "Terms & Conditions",
+        disclaimer: "Legal Disclaimer"
+      };
+      document.getElementById("legal-modal-title").textContent = titles[key] || "Policy";
+      document.getElementById("legal-modal-body").textContent = siteState.legal?.[key] || "";
+      document.getElementById("legal-modal").classList.add("open");
+    };
+    window.closeLegalModal = function() {
+      document.getElementById("legal-modal").classList.remove("open");
+    };
+  </script>
 </body>
 </html>
+```
