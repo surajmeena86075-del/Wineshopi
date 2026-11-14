@@ -113,29 +113,6 @@ border-radius: 4px;
 </style>
 </head>
 <body class="bg-[#0b0708] text-[#f3f0ec] antialiased selection:bg-amber-500 selection:text-black">
-<!-- AGE VERIFICATION MODAL -->
-<div id="age-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-4">
-<div class="luxury-card max-w-md w-full p-8 text-center space-y-6 rounded-2xl shadow-2xl relative">
-<div class="w-16 h-16 mx-auto rounded-full bg-amber-500/10 border border-amber-500/40 flex items-center justify-center text-amber-400 text-2xl font-cinzel">
-VR
-</div>
-<div class="space-y-2">
-<h2 class="text-3xl font-bold font-cinzel gold-gradient">Age Verification</h2>
-<p class="text-sm text-stone-300">You must be of legal drinking age in your jurisdiction to enter Vintner's Reserve.</p>
-</div>
-<div class="bg-amber-950/30 border border-amber-500/30 p-3 rounded-lg text-xs text-amber-200">
-Please verify that you are of legal drinking age. We advocate responsible enjoyment.
-</div>
-<div class="flex gap-4 pt-2">
-<button onclick="verifyAge(true)" class="btn-gold flex-1 py-3.5 rounded-xl uppercase tracking-wider text-xs cursor-pointer">
-I Am Of Legal Age
-</button>
-<button onclick="verifyAge(false)" class="btn-outline-gold flex-1 py-3.5 rounded-xl uppercase tracking-wider text-xs cursor-pointer">
-Exit Site
-</button>
-</div>
-</div>
-</div>
 <!-- FLOATING ACTION BUTTONS (WhatsApp & Phone) -->
 <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
 <a id="float-call-btn" href="tel:8607518160" class="w-14 h-14 rounded-full bg-burgundy border-2 border-amber-500 text-amber-400 flex items-center justify-center shadow-2xl hover:scale-110 transition-transform cursor-pointer" title="Call Boutique">
@@ -325,4 +302,21 @@ Email: concierge@vintnersreserve.in</p>
 </div>
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+</div>
+<div>
+<p class="text-xs uppercase text-stone-400 tracking-wider font-cinzel">Email Concierge</p>
+<a id="contact-email-disp" href="mailto:concierge@vintnersreserve.in" class="text-lg font-bold text-amber-300 hover:underline">concierge@vintnersreserve.in</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Google Maps Frame -->
+<div class="luxury-card p-4 rounded-2xl h-[400px]">
+<iframe id="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.138407425841!2d77.21672197653634!3d28.63043857566675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b4274c59%3A0xe54d6824907106a7!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; border-radius: 0.75rem;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="bg-black border-t border-amber-500/20 py-16 px-4 sm:px-6 lg:px-8">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid
